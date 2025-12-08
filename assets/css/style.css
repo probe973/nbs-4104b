@@ -72,7 +72,7 @@ nav {
     background-color: #ED61BA;
     box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     padding: 0;
-    border-bottom: 4px solid #005A9C; /* A solid line to separate header area from content */
+    border-bottom: 4px solid #ed66c0; /* A solid line to separate header area from content */
 }
 
 nav ul {
@@ -133,7 +133,7 @@ main {
 }
 
 .instructions {
-    background-color: #e3f2fd;
+    background-color: #fdeef8;
     color: #2c3e50; 
 }
 
