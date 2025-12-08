@@ -1,0 +1,40 @@
+# _config.yml
+
+# Site Settings
+title:            NBS-4104B LET Workshops
+description:      LET Workshops for NBS-4104B, Managing Data in a Digital World.
+author:           LET
+
+baseurl:          "/nbs-4014bb"
+
+url:              "https://probe973.github.io/nbs-4104b"
+
+# Jekyll Build Settings
+markdown:         kramdown
+highlighter:      rouge
+plugins:
+  # No SEO plugins needed.
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  math_engine: mathjax
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - README.md
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
