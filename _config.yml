@@ -5,7 +5,7 @@ title:            NBS-4104B LET Workshops
 description:      LET Workshops for NBS-4104B, Managing Data in a Digital World.
 author:           LET
 
-baseurl:          "/nbs-4014b"
+baseurl:          "/nbs-4104b"
 
 url:              "https://probe973.github.io/nbs-4104b"
 
