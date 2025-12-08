@@ -4,7 +4,7 @@ title: Home
 ---
 
 <div class="instructions" markdown="1">
-# NBS-4104B Statistics LET Workshops
+# NBS-4104B LET Workshops
 
 Here you will find the workshops from the Learning Enhancement Team (LET) for your NBS-4104B module.
 
@@ -13,20 +13,20 @@ They will provide you with the chance to practice questions on areas of mathemat
 
 <div class="card-menu">
     <!-- Fixed typo in URL and fixed the <p> tags -->
-    <a href="{{ "/descriptive/" | relative_url }}" class="card">
+    <a href="{{ "/numeracy/" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Descriptive Statistics</h3>
-                <p>Types of data; summary statistics</p>
+                <h3>Numeracy Skills</h3>
+                <p>Questions to work on numeracy skills such as arithmetic, fractions, percentages, and numerical problems.</p>
             </div>
         </div>
     </a>
     
-    <a href="{{ "/distributions/" | relative_url }}" class="card">
+    <a href="{{ "/algebra/" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Distributions</h3>
-                <p>Frequency tables; relative frequency; Empirical rule for normal distributions; Chebyshev's rule</p>
+                <h3>Algebraic Skills</h3>
+                <p>Questions on topics of rearranging equations, straight line graphs.</p>
             </div>
         </div>
     </a>
@@ -35,71 +35,37 @@ They will provide you with the chance to practice questions on areas of mathemat
         <div class="card-content">
             <div class="card-text">
                 <h3>Probability</h3>
-                <p>Probability calculation; Venn diagrams; tree diagrams; probability rules</p>
+                <p>Looking topics such as at probability calculations, probability rules, two-way tables, and tree diagrams.</p>
             </div>
         </div>
     </a>   
 
-    <a href="{{ "/drv/" | relative_url }}" class="card">
+    <a href="{{ "/descriptive/" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Discrete Random Variables</h3>
-                <p>Probability function; mean and variance</p>
+                <h3>Discriptive Statistics</h3>
+                <p>Summary statistics, such as mean and standard deviation, statistical diagrams, and indices and trends.</p>
             </div>
         </div>
     </a>
 
-    <a href="{{ "/binomial/" | relative_url }}" class="card">
+    <a href="{{ "/correlation/" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Binomial Distribution</h3>
-                <p>Calculating probabilities</p>
+                <h3>Correlation</h3>
+                <p>Here you will look at showing relationships between variables by looking at scatter diagrams and correlation coefficients.</p>
             </div>
         </div>
     </a>
 
-    <a href="{{ "/normal/" | relative_url }}" class="card">
+    <a href="{{ "/inferential/" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Normal Distribution</h3>
-                <p>Calculating probabilities</p>
+                <h3>Inferential Statistics</h3>
+                <p>Looking at sampling distributions and the t-test.</p>
             </div>
         </div>
     </a>
 
-    <a href="{{ "/confidence/" | relative_url }}" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h3>Confidence Intervals</h3>
-                <p>Confidence intervals for the mean; confidence intervals for a proportion</p>
-            </div>
-        </div>
-    </a>
 
-    <a href="{{ "/hypothesis/" | relative_url }}" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h3>Hypothesis Testing</h3>
-                <p>Null and alternative hypotheses; interpreting results</p>
-            </div>
-        </div>
-    </a>
-
-    <a href="{{ "/t/" | relative_url }}" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h3>t-Tests</h3>
-                <p>One-sample; independent-samples; paired-samples</p>
-            </div>
-        </div>
-    </a>
-
-    <a href="{{ "/review/" | relative_url }}" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h3>Review</h3>
-                <p>A review workshop</p>
-            </div>
-        </div>
-    </a>
 </div>
