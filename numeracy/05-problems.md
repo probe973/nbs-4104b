@@ -182,12 +182,6 @@ In economics and global business, numbers are often too large to write out fully
 
 In this section, you will apply your numeracy skills to solve common problems. You will need to interpret the text to decide which calculations to perform.
 
-### Analyzing the Problem
-
-1.  **Identify the Goal:** What is the question actually asking for? (e.g., Difference in price, Final balance, Units to sell).
-2.  **Filter Information:** Ignore numbers that aren't relevant.
-3.  **Choose the Method:** Do you need to add, subtract, find a percentage, or work backwards?
-
 </div>
 
 {% include question_numerical.html
@@ -260,7 +254,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
    solution_text="1. <strong>Rent:</strong> $1200 - 500 = 700$. <br> 2. <strong>Client:</strong> Balance went from 700 to 1500. The difference is $1500 - 700 = 800$ (Money In). <br> 3. <strong>Wages:</strong> Balance went from 1500 down to 900. The difference is $1500 - 900 = 600$ (Money Out). <br> 4. <strong>Utility:</strong> $900 - 150 = 750$."
 %}
 
-<br><br>
+<br>
 
 {% include question_numerical.html
     id="bus_prob_breakeven"
