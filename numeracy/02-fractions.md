@@ -1,4 +1,9 @@
-# Fractions Mastery
+---
+layout: default
+title: Fractions Practice
+---
+
+# Fractions Workshop
 
 Please review the notes in each section and answer the questions.
 
