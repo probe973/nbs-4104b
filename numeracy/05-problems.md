@@ -77,9 +77,9 @@ In finance, percentages are used for tax (VAT), interest, and profit margins.
 
 <div class="instructions" markdown="1">
 
-### Operational Costs
+### Costs
 
-Businesses often use tables to calculate the total cost of inventory or services. This involves multiplying unit costs by quantities and summing the total.
+Tables can be used to calculate the total cost of inventory or services. This involves multiplying unit costs by quantities and summing the total.
 
 </div>
 
