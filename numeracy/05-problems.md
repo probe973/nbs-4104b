@@ -277,7 +277,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 {% include question_numerical.html
     id="bus_prob_fx"
     title="14 Importing Costs"
-    question_text="A UK business buys a machine from the USA for $6,000 (USD). <br> The exchange rate is £1 = $1.25. <br> The shipping company charges a flat fee of £200. <br> What is the total cost in Pounds Sterling (£)?"
+    question_text="A UK business buys a machine from the USA for \$6,000 (USD). <br> The exchange rate is £1 = $1.25. <br> The shipping company charges a flat fee of £200. <br> What is the total cost in Pounds Sterling (£)?"
     correct_answer="5000"
     tolerance="0.01"
     solution_text="1. Convert machine cost: $6000 \div 1.25 = 4800$. <br> 2. Add shipping: $4800 + 200 = 5000$."
