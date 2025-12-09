@@ -3,7 +3,7 @@ layout: default
 title: Problems in Numeracy
 ---
 
-# Business & Financial Numeracy
+# Numeracy Problems
 
 This section applies your arithmetic skills to scenarios.
 
@@ -186,7 +186,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 {% include question_numerical.html
     id="bus_prob_compare"
-    title="10 Supplier Selectio"
+    title="10 Supplier Selection"
     question_text="You need to buy 50 office chairs. <br> **Supplier A** charges £40 per chair. <br> **Supplier B** charges £50 per chair but offers a 25% discount on the total order. <br> What is the **difference in total price** between the two suppliers?"
     correct_answer="125"
     tolerance="0"
