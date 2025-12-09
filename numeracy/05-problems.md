@@ -186,7 +186,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 {% include question_numerical.html
     id="bus_prob_compare"
-    title="10 Supplier Selection"
+    title="10 Supplier Selectio"
     question_text="You need to buy 50 office chairs. <br> **Supplier A** charges £40 per chair. <br> **Supplier B** charges £50 per chair but offers a 25% discount on the total order. <br> What is the **difference in total price** between the two suppliers?"
     correct_answer="125"
     tolerance="0"
@@ -246,7 +246,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 {% include table_fill.html 
    id="bus_prob_statement" 
-   title="11 Reconciling a Bank Statement"
+   title="11 Bank Statement"
    question_text="Fill in the missing values in the bank statement. You will need to look at how the <strong>Balance</strong> changes to figure out the missing 'Money In' or 'Money Out' figures."
    table_content=bank_table
    answers="700 || 800 || 600 || 750"
@@ -267,7 +267,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 {% include question_numerical.html
     id="bus_prob_commission"
-    title="13 Sales Commission Calculation"
+    title="13 Sales Commission"
     question_text="A salesperson earns a basic salary of £1,500 per month. <br> They also earn 10% commission on any sales **above** £10,000. <br> In March, they made £18,000 in sales. Calculate their **total pay** for the month."
     correct_answer="2300"
     tolerance="0"
@@ -277,7 +277,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 {% include question_numerical.html
     id="bus_prob_fx"
     title="14 Importing Costs"
-    question_text="A UK business buys a machine from the USA for $ \$ 6,000$ (USD). <br> The exchange rate is $£1 = \$ 1.25$. <br> The shipping company charges a flat fee of £200. <br> What is the total cost in Pounds Sterling (£)?"
+    question_text="A UK business buys a machine from the USA for 6,000 USD. <br> The exchange rate is £1 = 1.25 USD. <br> The shipping company charges a flat fee of £200. <br> What is the total cost in Pounds Sterling (£)?"
     correct_answer="5000"
     tolerance="0.01"
     solution_text="1. Convert machine cost: $6000 \div 1.25 = 4800$. <br> 2. Add shipping: $4800 + 200 = 5000$."
@@ -285,7 +285,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 {% include question_numerical.html
     id="bus_prob_tax"
-    title="15 Net Pay Calculation"
+    title="15 Net Pay"
     question_text="An employee's gross monthly pay is £3,000. <br> Income Tax is calculated as 20% of their earnings **after** a tax-free allowance of £1,000 is deducted. <br> Calculate their Net Pay (Take home pay)."
     correct_answer="2600"
     tolerance="0"
