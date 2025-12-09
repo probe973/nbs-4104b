@@ -1,4 +1,9 @@
-# General Arithmetic Quiz
+---
+layout: default
+title: Arithmetic Practice
+---
+
+# General Arithmetic Workshop
 
 Please review the notes below and answer the questions to test your understanding.
 
