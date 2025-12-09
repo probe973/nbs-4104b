@@ -208,3 +208,9 @@ correct_answer="-20"
 tolerance="0"
 solution_text="1. Brackets: $4 - 9 = -5$. <br> 2. Multiply: $3 \times -5 = -15$. <br> 3. Add: $-5 + (-15) = -20$."
 %}
+
+<div style="text-align: center; margin-top: 3em;">
+    <a href="{{ "/numeracy/" | relative_url }}">← Return to Numeracy Menu</a>
+</div>
+
+{% include pagination.html %}
