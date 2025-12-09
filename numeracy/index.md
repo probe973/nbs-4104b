@@ -8,6 +8,11 @@ title: Numeracy Home
 
 Here you will find links to questions on numeracy topics.
 
+You can download a pdf of all of the resources <a href="{{ "/assets/pdf/Numeracy.pdf" | relative_url }}" target="_blank">here</a>.
+
+The solutions pdf can be found <a href="{{ "/assets/pdf/Numeracy_solutions.pdf" | relative_url }}" target="_blank">here</a>.  
+
+Please be mindful of the environment when choosing whether you need to print.
 </div>
 
 <div class="card-menu">
