@@ -160,7 +160,7 @@ In economics and global business, numbers are often too large to write out fully
 {% include question_dropdown.html
     id="bus_sf_2"
     title="8"
-    question_text="The GDP of a country is £2.8 Trillion (£2,800,000,000,000). Select the correct Standard Form."
+    question_text="The GDP of a country is £2.8 Trillion (£2,800,000,000,000). Write in Standard Form."
     options="correct::2.8 \times 10^{12}||wrong1::2.8 \times 10^9||wrong2::28 \times 10^{11}||wrong3::2.8 \times 10^{10}"
     correct_answer="correct"
     solution_text="A trillion has 12 zeros. <br> $2.8 \times 10^{12}$."
@@ -184,7 +184,6 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 ### Analyzing the Problem
 
-Real business problems rarely look like "$50 + 10$". They look like stories.
 1.  **Identify the Goal:** What is the question actually asking for? (e.g., Difference in price, Final balance, Units to sell).
 2.  **Filter Information:** Ignore numbers that aren't relevant.
 3.  **Choose the Method:** Do you need to add, subtract, find a percentage, or work backwards?
