@@ -14,7 +14,6 @@ This section applies your arithmetic skills to scenarios.
 In business:
 *   **Profit** = Revenue (Money coming in) - Expenses (Money going out).
 *   If Expenses are higher than Revenue, the result is a **Loss** (a negative number).
-*   **Overdrafts:** A bank account with a negative balance is in overdraft.
 
 </div>
 
