@@ -5,7 +5,7 @@ title: Problems in Numeracy
 
 # Business & Financial Numeracy
 
-This section applies your arithmetic skills to scenarios. You will encounter Profit & Loss, Cash Flow, Financial Percentages, and Economic Data.
+This section applies your arithmetic skills to scenarios.
 
 <div class="instructions" markdown="1">
 
@@ -35,58 +35,6 @@ In business:
     tolerance="0"
     solution_text="Profit = Revenue - Expenses. <br> $4500 - 12000 = -7500$. <br> This is a loss of £7,500."
 %}
-
-<!-- TABLE QUESTION 1: CASH FLOW -->
-{% capture cash_flow_table %}
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Month</th>
-      <th>Income (£)</th>
-      <th>Expenses (£)</th>
-      <th>Net Cash Flow (£)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>January</td>
-      <td>5,000</td>
-      <td>4,200</td>
-      <td><input type="number" step="any"></td>
-    </tr>
-    <tr>
-      <td>February</td>
-      <td>3,500</td>
-      <td>4,000</td>
-      <td><input type="number" step="any"></td>
-    </tr>
-    <tr>
-      <td>March</td>
-      <td>6,200</td>
-      <td>3,100</td>
-      <td><input type="number" step="any"></td>
-    </tr>
-    <tr>
-      <td><strong>TOTAL</strong></td>
-      <td>14,700</td>
-      <td>11,300</td>
-      <td><input type="number" step="any"></td>
-    </tr>
-  </tbody>
-</table>
-{% endcapture %}
-
-{% include table_fill.html 
-   id="table_cash_flow" 
-   title="Question 3: Cash Flow Statement"
-   question_text="Complete the table below. <br> <strong>Net Cash Flow</strong> is calculated as Income minus Expenses. Note that February has higher expenses than income."
-   table_content=cash_flow_table
-   answers="800 || -500 || 3100 || 3400"
-   tolerance="0" 
-   solution_text="<strong>Jan:</strong> $5000 - 4200 = 800$. <br> <strong>Feb:</strong> $3500 - 4000 = -500$ (A deficit). <br> <strong>Mar:</strong> $6200 - 3100 = 3100$. <br> <strong>Total:</strong> Add the Net Cash Flows: $800 + (-500) + 3100 = 3400$."
-%}
-
-<br><br>
 
 <div class="instructions" markdown="1">
 
@@ -227,6 +175,130 @@ In economics and global business, numbers are often too large to write out fully
     solution_text="Move the decimal point 5 places to the right. <br> $1.2 \to 12 \to 120 \to 1200 \to 12000 \to 120000$."
 %}
 
+
+<div class="instructions" markdown="1">
+
+### Further Problem Solving
+
+In this section, you will apply your numeracy skills to solve common business problems. You will need to interpret the text to decide which calculations to perform.
+
+### Analyzing the Problem
+
+Real business problems rarely look like "$50 + 10$". They look like stories.
+1.  **Identify the Goal:** What is the question actually asking for? (e.g., Difference in price, Final balance, Units to sell).
+2.  **Filter Information:** Ignore numbers that aren't relevant.
+3.  **Choose the Method:** Do you need to add, subtract, find a percentage, or work backwards?
+
+</div>
+
+{% include question_numerical.html
+    id="bus_prob_compare"
+    title="Supplier Selection"
+    question_text="You need to buy 50 office chairs. <br> **Supplier A** charges £40 per chair. <br> **Supplier B** charges £50 per chair but offers a 25% discount on the total order. <br> What is the **difference in total price** between the two suppliers?"
+    correct_answer="125"
+    tolerance="0"
+    solution_text="<strong>Supplier A:</strong> $50 \times 40 = 2000$. <br> <strong>Supplier B:</strong> $50 \times 50 = 2500$. Discount is 25% (Multiplier 0.75). $2500 \times 0.75 = 1875$. <br> <strong>Difference:</strong> $2000 - 1875 = 125$."
+%}
+
+{% capture bank_table %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Description</th>
+      <th>Money In (+)</th>
+      <th>Money Out (-)</th>
+      <th>Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>01 Jan</td>
+      <td>Opening Balance</td>
+      <td></td>
+      <td></td>
+      <td><strong>£1,200</strong></td>
+    </tr>
+    <tr>
+      <td>05 Jan</td>
+      <td>Office Rent</td>
+      <td></td>
+      <td>500</td>
+      <td><input type="number" step="any"></td>
+    </tr>
+    <tr>
+      <td>10 Jan</td>
+      <td>Client Payment</td>
+      <td><input type="number" step="any"></td>
+      <td></td>
+      <td><strong>£1,500</strong></td>
+    </tr>
+    <tr>
+      <td>15 Jan</td>
+      <td>Staff Wages</td>
+      <td></td>
+      <td><input type="number" step="any"></td>
+      <td><strong>£900</strong></td>
+    </tr>
+    <tr>
+      <td>20 Jan</td>
+      <td>Utility Bill</td>
+      <td></td>
+      <td>150</td>
+      <td><input type="number" step="any"></td>
+    </tr>
+  </tbody>
+</table>
+{% endcapture %}
+
+{% include table_fill.html 
+   id="bus_prob_statement" 
+   title="Reconciling a Bank Statement"
+   question_text="Fill in the missing values in the bank statement. You will need to look at how the <strong>Balance</strong> changes to figure out the missing 'Money In' or 'Money Out' figures."
+   table_content=bank_table
+   answers="700 || 800 || 600 || 750"
+   tolerance="0.01" 
+   solution_text="1. <strong>Rent:</strong> $1200 - 500 = 700$. <br> 2. <strong>Client:</strong> Balance went from 700 to 1500. The difference is $1500 - 700 = 800$ (Money In). <br> 3. <strong>Wages:</strong> Balance went from 1500 down to 900. The difference is $1500 - 900 = 600$ (Money Out). <br> 4. <strong>Utility:</strong> $900 - 150 = 750$."
+%}
+
+<br><br>
+
+{% include question_numerical.html
+    id="bus_prob_breakeven"
+    title="Break-Even Analysis"
+    question_text="A bakery has fixed monthly costs (Rent, Insurance) of £2,000. <br> They sell cakes for £5.00 each. <br> It costs them £1.00 in ingredients to make each cake. <br> How many cakes must they sell to cover their costs (Break Even)?"
+    correct_answer="500"
+    tolerance="0"
+    solution_text="1. Find profit per cake: $5.00 - 1.00 = 4.00$. <br> 2. Divide fixed costs by profit per cake: $2000 \div 4 = 500$. <br> They need to sell 500 cakes."
+%}
+
+{% include question_numerical.html
+    id="bus_prob_commission"
+    title="Sales Commission Calculation"
+    question_text="A salesperson earns a basic salary of £1,500 per month. <br> They also earn 10% commission on any sales **above** £10,000. <br> In March, they made £18,000 in sales. Calculate their **total pay** for the month."
+    correct_answer="2300"
+    tolerance="0"
+    solution_text="1. Calculate sales eligible for commission: $18,000 - 10,000 = 8,000$. <br> 2. Calculate 10% commission: $10\%$ of $8,000 = 800$. <br> 3. Add to basic salary: $1,500 + 800 = 2,300$."
+%}
+
+{% include question_numerical.html
+    id="bus_prob_fx"
+    title="Importing Costs"
+    question_text="A UK business buys a machine from the USA for $6,000 (USD). <br> The exchange rate is £1 = $1.25. <br> The shipping company charges a flat fee of £200. <br> What is the total cost in Pounds Sterling (£)?"
+    correct_answer="5000"
+    tolerance="0.01"
+    solution_text="1. Convert machine cost: $6000 \div 1.25 = 4800$. <br> 2. Add shipping: $4800 + 200 = 5000$."
+%}
+
+<!-- PROBLEM 6: NET PAY ESTIMATION -->
+{% include question_numerical.html
+    id="bus_prob_tax"
+    title="Net Pay Calculation"
+    question_text="An employee's gross monthly pay is £3,000. <br> Income Tax is calculated as 20% of their earnings **after** a tax-free allowance of £1,000 is deducted. <br> Calculate their Net Pay (Take home pay)."
+    correct_answer="2600"
+    tolerance="0"
+    solution_text="1. Taxable amount: $3000 - 1000 = 2000$. <br> 2. Calculate Tax: $20\%$ of $2000 = 400$. <br> 3. Net Pay: $3000 (\text{Gross}) - 400 (\text{Tax}) = 2600$."
+%}
 
 <div style="text-align: center; margin-top: 3em;">
     <a href="{{ "/numeracy/" | relative_url }}">← Return to Numeracy Menu</a>
