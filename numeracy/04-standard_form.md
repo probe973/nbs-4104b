@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Standard Form Practice
+title: Standard Form
 ---
 
 # Standard Form (Scientific Notation)
@@ -28,7 +28,7 @@ Multiplying by 10 moves the decimal point **one step to the right**.
 
 {% include question_numerical.html
     id="sf_large_exp_1"
-    title="Question 1"
+    title="1"
     question_text="Write $3 \times 10^2$ as an ordinary number."
     correct_answer="300"
     tolerance="0"
@@ -37,7 +37,7 @@ Multiplying by 10 moves the decimal point **one step to the right**.
 
 {% include question_numerical.html
     id="sf_large_exp_2"
-    title="Question 2"
+    title="2"
     question_text="Write $5.2 \times 10^3$ as an ordinary number."
     correct_answer="5200"
     tolerance="0"
@@ -46,7 +46,7 @@ Multiplying by 10 moves the decimal point **one step to the right**.
 
 {% include question_numerical.html
     id="sf_large_exp_3"
-    title="Question 3"
+    title="3"
     question_text="Write $1.45 \times 10^4$ as an ordinary number."
     correct_answer="14500"
     tolerance="0"
@@ -55,7 +55,7 @@ Multiplying by 10 moves the decimal point **one step to the right**.
 
 {% include question_numerical.html
     id="sf_large_exp_4"
-    title="Question 4"
+    title="4"
     question_text="Write $6 \times 10^5$ as an ordinary number."
     correct_answer="600000"
     tolerance="0"
@@ -64,7 +64,7 @@ Multiplying by 10 moves the decimal point **one step to the right**.
 
 {% include question_numerical.html
     id="sf_large_exp_5"
-    title="Question 5"
+    title="5"
     question_text="Write $9.02 \times 10^4$ as an ordinary number."
     correct_answer="90200"
     tolerance="0"
@@ -91,7 +91,7 @@ To write a normal number in Standard Form, we split it into two parts: $A \times
 
 {% include question_dropdown.html
     id="sf_large_create_1"
-    title="Question 1"
+    title="6"
     question_text="Write 4000 in Standard Form."
     options="wrong1::4 \times 10^4||correct::4 \times 10^3||wrong2::40 \times 10^2||wrong3::4 \times 10^2"
     correct_answer="correct"
@@ -100,7 +100,7 @@ To write a normal number in Standard Form, we split it into two parts: $A \times
 
 {% include question_dropdown.html
     id="sf_large_create_2"
-    title="Question 2"
+    title="7"
     question_text="Write 250 in Standard Form."
     options="wrong1::25 \times 10^1||correct::2.5 \times 10^2||wrong2::0.25 \times 10^3||wrong3::2.5 \times 10^1"
     correct_answer="correct"
@@ -109,7 +109,7 @@ To write a normal number in Standard Form, we split it into two parts: $A \times
 
 {% include question_dropdown.html
     id="sf_large_create_3"
-    title="Question 3"
+    title="8"
     question_text="Write 8,000,000 in Standard Form."
     options="correct::8 \times 10^6||wrong1::8 \times 10^7||wrong2::8 \times 10^5||wrong3::80 \times 10^5"
     correct_answer="correct"
@@ -118,7 +118,7 @@ To write a normal number in Standard Form, we split it into two parts: $A \times
 
 {% include question_dropdown.html
     id="sf_large_create_4"
-    title="Question 4"
+    title="9"
     question_text="Write 52,100 in Standard Form."
     options="wrong1::5.21 \times 10^3||wrong2::52.1 \times 10^3||correct::5.21 \times 10^4||wrong3::5.21 \times 10^5"
     correct_answer="correct"
@@ -127,7 +127,7 @@ To write a normal number in Standard Form, we split it into two parts: $A \times
 
 {% include question_dropdown.html
     id="sf_large_create_5"
-    title="Question 5"
+    title="10"
     question_text="Write 19,500,000 in Standard Form."
     options="wrong1::1.95 \times 10^6||correct::1.95 \times 10^7||wrong2::19.5 \times 10^6||wrong3::1.95 \times 10^8"
     correct_answer="correct"
@@ -155,7 +155,7 @@ Very small numbers (decimals less than 1) use **Negative Powers**.
 
 {% include question_numerical.html
     id="sf_small_exp_1"
-    title="Question 1"
+    title="11"
     question_text="Write $5 \times 10^{-1}$ as an ordinary number."
     correct_answer="0.5"
     tolerance="0"
@@ -164,7 +164,7 @@ Very small numbers (decimals less than 1) use **Negative Powers**.
 
 {% include question_numerical.html
     id="sf_small_exp_2"
-    title="Question 2"
+    title="12"
     question_text="Write $2 \times 10^{-3}$ as an ordinary number."
     correct_answer="0.002"
     tolerance="0"
@@ -173,7 +173,7 @@ Very small numbers (decimals less than 1) use **Negative Powers**.
 
 {% include question_numerical.html
     id="sf_small_exp_3"
-    title="Question 3"
+    title="13"
     question_text="Write $4.5 \times 10^{-2}$ as an ordinary number."
     correct_answer="0.045"
     tolerance="0"
@@ -182,7 +182,7 @@ Very small numbers (decimals less than 1) use **Negative Powers**.
 
 {% include question_numerical.html
     id="sf_small_exp_4"
-    title="Question 4"
+    title="14"
     question_text="Write $1.23 \times 10^{-4}$ as an ordinary number."
     correct_answer="0.000123"
     tolerance="0"
@@ -191,7 +191,7 @@ Very small numbers (decimals less than 1) use **Negative Powers**.
 
 {% include question_numerical.html
     id="sf_small_exp_5"
-    title="Question 5"
+    title="15"
     question_text="Write $9.9 \times 10^{-3}$ as an ordinary number."
     correct_answer="0.0099"
     tolerance="0"
@@ -216,7 +216,7 @@ We use the same rules as before, but since the number is less than 1, the power 
 
 {% include question_dropdown.html
     id="sf_small_create_1"
-    title="Question 1"
+    title="16"
     question_text="Write 0.006 in Standard Form."
     options="wrong1::6 \times 10^{-2}||correct::6 \times 10^{-3}||wrong2::6 \times 10^3||wrong3::0.6 \times 10^{-2}"
     correct_answer="correct"
@@ -225,7 +225,7 @@ We use the same rules as before, but since the number is less than 1, the power 
 
 {% include question_dropdown.html
     id="sf_small_create_2"
-    title="Question 2"
+    title="17"
     question_text="Write 0.04 in Standard Form."
     options="correct::4 \times 10^{-2}||wrong1::4 \times 10^{-1}||wrong2::4 \times 10^{-3}||wrong3::40 \times 10^{-3}"
     correct_answer="correct"
@@ -234,7 +234,7 @@ We use the same rules as before, but since the number is less than 1, the power 
 
 {% include question_dropdown.html
     id="sf_small_create_3"
-    title="Question 3"
+    title="18"
     question_text="Write 0.000052 in Standard Form."
     options="wrong1::5.2 \times 10^{-4}||correct::5.2 \times 10^{-5}||wrong2::52 \times 10^{-6}||wrong3::5.2 \times 10^{-6}"
     correct_answer="correct"
@@ -243,7 +243,7 @@ We use the same rules as before, but since the number is less than 1, the power 
 
 {% include question_dropdown.html
     id="sf_small_create_4"
-    title="Question 4"
+    title="19"
     question_text="Write 0.00105 in Standard Form."
     options="wrong1::1.05 \times 10^{-2}||wrong2::1.05 \times 10^{-4}||correct::1.05 \times 10^{-3}||wrong3::10.5 \times 10^{-4}"
     correct_answer="correct"
@@ -252,7 +252,7 @@ We use the same rules as before, but since the number is less than 1, the power 
 
 {% include question_dropdown.html
     id="sf_small_create_5"
-    title="Question 5"
+    title="20"
     question_text="Write 0.0000009 in Standard Form."
     options="correct::9 \times 10^{-7}||wrong1::9 \times 10^{-6}||wrong2::9 \times 10^{-8}||wrong3::0.9 \times 10^{-6}"
     correct_answer="correct"
@@ -260,7 +260,7 @@ We use the same rules as before, but since the number is less than 1, the power 
 %}
 
 <div style="text-align: center; margin-top: 3em;">
-    <a href="{{ "/numeracy/" | relative_url }}">← Return to jamovi Guides Menu</a>
+    <a href="{{ "/numeracy/" | relative_url }}">← Return to Numeracy Menu</a>
 </div>
 
 {% include pagination.html %}
