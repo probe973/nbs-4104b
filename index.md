@@ -26,7 +26,7 @@ They will provide you with the chance to practice questions on areas of mathemat
         <div class="card-content">
             <div class="card-text">
                 <h3>Algebraic Skills</h3>
-                <p>Questions on topics of rearranging equations, straight line graphs.</p>
+                <p>Questions on topics of simplifying algebraic expressions, solving equations, rearranging equations, and straight line graphs.</p>
             </div>
         </div>
     </a>
