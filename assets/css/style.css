@@ -268,22 +268,26 @@ a:focus:not(.btn), button:focus:not(.btn), input:focus, select:focus, textarea:f
 }
 
 /* --- Interactive Question Styles --- */
+/* --- QUESTION CONTAINER (The Box) --- */
 .question-container {
-    background-color: #f5f7f9;
-    border-left: 5px solid #607d8b;
+    background-color: #f4eff6; /* Soft Lavender */
+    border-left: 5px solid #8e24aa; /* Rich Plum Border */
     padding: 1.8em 2em;
     margin-top: 2.5em;
     margin-bottom: 2.5em;
     border-radius: 0 8px 8px 0;
+    color: #2c3e50; /* Dark Grey text (AAA contrast) */
 }
 
 .question-container h3 {
     margin-top: 0;
+    color: #4a148c; /* Optional: Make the heading a very dark purple */
 }
 
+/* --- BUTTONS (The Interaction) --- */
 .btn {
     display: inline-block;
-    background-color: #34495e;
+    background-color: #6a1b9a; /* Deep Purple (AAA contrast with white text) */
     color: white;
     padding: 12px 24px;
     border: none;
@@ -299,19 +303,20 @@ a:focus:not(.btn), button:focus:not(.btn), input:focus, select:focus, textarea:f
 }
 
 .btn:hover {
-    background-color: #4a627a;
+    background-color: #8e24aa; /* Lighter Plum on hover */
     transform: translateY(-2px);
     box-shadow: 0 5px 10px rgba(0,0,0,0.15);
 }
 
 .btn-primary {
-    background-color: #34495e;
+    background-color: #6a1b9a; /* Matches main button theme */
 }
 
 .btn-primary:hover {
-    background-color: #4a627a;
+    background-color: #8e24aa;
 }
 
+/* --- MULTIPLE CHOICE (The Options) --- */
 .mcq-options {
     margin-top: 1.5em;
     display: flex;
@@ -330,21 +335,23 @@ a:focus:not(.btn), button:focus:not(.btn), input:focus, select:focus, textarea:f
 }
 
 .mcq-options label:hover {
-    border-color: #3498db;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    border-color: #8e24aa; /* Changed from Blue to Plum */
+    box-shadow: 0 2px 5px rgba(142, 36, 170, 0.2); /* Soft purple shadow */
 }
 
 .mcq-options input[type="radio"] {
     margin-right: 12px;
     transform: scale(1.2);
+    accent-color: #8e24aa; /* Modern browsers will turn the radio dot purple */
 }
 
+/* --- NUMERICAL INPUT (The Field) --- */
 .numerical-answer-container {
     margin-top: 1.5em;
     display: flex;
-    flex-direction: column; /* Stack elements vertically for a cleaner look */
-    gap: 15px; /* Space between the input and the buttons */
-    align-items: flex-start; /* Align to the left */
+    flex-direction: column; 
+    gap: 15px; 
+    align-items: flex-start; 
 }
 
 .numerical-answer-container input[type="number"] {
@@ -353,10 +360,19 @@ a:focus:not(.btn), button:focus:not(.btn), input:focus, select:focus, textarea:f
     border: 1px solid #ccc;
     border-radius: 6px;
     width: 100%;
-    max-width: 250px; /* A good, consistent width */
-    box-sizing: border-box; /* Important for consistent sizing */
+    max-width: 250px;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
 }
 
+.numerical-answer-container input[type="number"]:focus {
+    outline: none;
+    border-color: #8e24aa; /* Purple border when typing */
+    box-shadow: 0 0 0 3px rgba(142, 36, 170, 0.1); /* Soft purple glow */
+}
+
+/* --- FEEDBACK (Correct/Incorrect) --- */
+/* Kept Green/Red as per standard conventions, but tweaked slightly */
 .feedback {
     margin-top: 1em;
     padding: 10px 15px;
@@ -376,13 +392,15 @@ a:focus:not(.btn), button:focus:not(.btn), input:focus, select:focus, textarea:f
     border: 1px solid #ffccbc;
 }
 
+/* --- SOLUTION (The Reveal) --- */
 .solution-toggle-button {
     margin-top: 1.5em;
 }
 
 .solution-content {
-    background-color: #fff8e1;
+    background-color: #fff8e1; /* Kept Yellow (Post-it note style) */
     border: 1px solid #ffecb3;
+    color: #5d4037; /* Dark brown text for contrast on yellow */
     padding: 1.5em;
     margin-top: 1em;
     border-radius: 7px;
