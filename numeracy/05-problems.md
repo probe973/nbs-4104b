@@ -7,6 +7,12 @@ title: Problems in Numeracy
 
 This section applies your arithmetic skills to scenarios.
 
+You can download a pdf of this resource <a href="{{ "/assets/pdf/numeracy_problems.pdf" | relative_url }}" target="_blank">here</a>.
+
+The solutions pdf can be found <a href="{{ "/assets/pdf/numeracy_problems_solutions.pdf" | relative_url }}" target="_blank">here</a>.  
+
+Please be mindful of the environment when choosing whether you need to print.
+
 <div class="instructions" markdown="1">
 
 ### Profit, Loss, and Cash Flow
