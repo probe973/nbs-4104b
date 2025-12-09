@@ -9,7 +9,7 @@ This section applies your arithmetic skills to scenarios.
 
 <div class="instructions" markdown="1">
 
-### Part 1: Profit, Loss, and Cash Flow
+### Profit, Loss, and Cash Flow
 
 In business:
 *   **Profit** = Revenue (Money coming in) - Expenses (Money going out).
@@ -20,7 +20,7 @@ In business:
 
 {% include question_numerical.html
     id="bus_pl_1"
-    title="Question 1: Calculating Profit"
+    title="1"
     question_text="A coffee shop generates £4,500 in revenue this month. The cost of coffee beans, milk, and rent totals £3,250. Calculate the profit. (If a loss, write as a negative profit)"
     correct_answer="1250"
     tolerance="0"
@@ -29,7 +29,7 @@ In business:
 
 {% include question_numerical.html
     id="bus_pl_2"
-    title="Question 2: Handling Losses"
+    title="2"
     question_text="A startup spends £12,000 on development but only makes £4,500 in sales. What is their profit? (If a loss, write as a negative profit)"
     correct_answer="-7500"
     tolerance="0"
@@ -38,7 +38,7 @@ In business:
 
 <div class="instructions" markdown="1">
 
-### Part 2: Financial Percentages
+### Financial Percentages
 
 In finance, percentages are used for tax (VAT), interest, and profit margins.
 
@@ -49,7 +49,7 @@ In finance, percentages are used for tax (VAT), interest, and profit margins.
 
 {% include question_numerical.html
     id="bus_perc_1"
-    title="Question 4: Calculating VAT"
+    title="3"
     question_text="A laptop costs £800 excluding VAT. VAT is charged at 20%. Calculate the total price including VAT."
     correct_answer="960"
     tolerance="0.01"
@@ -58,7 +58,7 @@ In finance, percentages are used for tax (VAT), interest, and profit margins.
 
 {% include question_numerical.html
     id="bus_perc_2"
-    title="Question 5: Trade Discounts"
+    title="4"
     question_text="A supplier offers a 15% trade discount on an order of £2,000. What is the discounted price?"
     correct_answer="1700"
     tolerance="0.01"
@@ -67,7 +67,7 @@ In finance, percentages are used for tax (VAT), interest, and profit margins.
 
 {% include question_numerical.html
     id="bus_perc_3"
-    title="Question 6: Reverse VAT"
+    title="5"
     question_text="A service bill is £144, which includes VAT at 20%. Calculate the cost *before* VAT was added."
     correct_answer="120"
     tolerance="0.01"
@@ -78,7 +78,7 @@ In finance, percentages are used for tax (VAT), interest, and profit margins.
 
 <div class="instructions" markdown="1">
 
-### Part 3: Operational Costs
+### Operational Costs
 
 Businesses often use tables to calculate the total cost of inventory or services. This involves multiplying unit costs by quantities and summing the total.
 
@@ -126,7 +126,7 @@ Businesses often use tables to calculate the total cost of inventory or services
 
 {% include table_fill.html 
    id="table_inventory" 
-   title="Question 7: Inventory Valuation"
+   title="6: Inventory Valuation"
    question_text="Calculate the total cost for each item line, and then the Grand Total."
    table_content=inventory_table
    answers="455 || 600 || 305 || 1360"
@@ -138,7 +138,7 @@ Businesses often use tables to calculate the total cost of inventory or services
 
 <div class="instructions" markdown="1">
 
-### Part 4: Economic Data (Standard Form)
+### Economic Data (Standard Form)
 
 In economics and global business, numbers are often too large to write out fully (e.g., National Debt, GDP). We use **Standard Form**.
 
@@ -150,7 +150,7 @@ In economics and global business, numbers are often too large to write out fully
 
 {% include question_dropdown.html
     id="bus_sf_1"
-    title="Question 8: Company Valuation"
+    title="7"
     question_text="A tech company is valued at £45,000,000. Write this in Standard Form."
     options="wrong1::4.5 \times 10^6||correct::4.5 \times 10^7||wrong2::45 \times 10^6||wrong3::4.5 \times 10^8"
     correct_answer="correct"
@@ -159,7 +159,7 @@ In economics and global business, numbers are often too large to write out fully
 
 {% include question_dropdown.html
     id="bus_sf_2"
-    title="Question 9: National GDP"
+    title="8"
     question_text="The GDP of a country is £2.8 Trillion (£2,800,000,000,000). Select the correct Standard Form."
     options="correct::2.8 \times 10^{12}||wrong1::2.8 \times 10^9||wrong2::28 \times 10^{11}||wrong3::2.8 \times 10^{10}"
     correct_answer="correct"
@@ -168,7 +168,7 @@ In economics and global business, numbers are often too large to write out fully
 
 {% include question_numerical.html
     id="bus_sf_3"
-    title="Question 10: Interpreting Data"
+    title="9"
     question_text="A budget deficit is listed as $1.2 \times 10^5$. Write this as an ordinary number."
     correct_answer="120000"
     tolerance="0"
@@ -180,7 +180,7 @@ In economics and global business, numbers are often too large to write out fully
 
 ### Further Problem Solving
 
-In this section, you will apply your numeracy skills to solve common business problems. You will need to interpret the text to decide which calculations to perform.
+In this section, you will apply your numeracy skills to solve common problems. You will need to interpret the text to decide which calculations to perform.
 
 ### Analyzing the Problem
 
@@ -193,7 +193,7 @@ Real business problems rarely look like "$50 + 10$". They look like stories.
 
 {% include question_numerical.html
     id="bus_prob_compare"
-    title="Supplier Selection"
+    title="10 Supplier Selection"
     question_text="You need to buy 50 office chairs. <br> **Supplier A** charges £40 per chair. <br> **Supplier B** charges £50 per chair but offers a 25% discount on the total order. <br> What is the **difference in total price** between the two suppliers?"
     correct_answer="125"
     tolerance="0"
@@ -253,7 +253,7 @@ Real business problems rarely look like "$50 + 10$". They look like stories.
 
 {% include table_fill.html 
    id="bus_prob_statement" 
-   title="Reconciling a Bank Statement"
+   title="11 Reconciling a Bank Statement"
    question_text="Fill in the missing values in the bank statement. You will need to look at how the <strong>Balance</strong> changes to figure out the missing 'Money In' or 'Money Out' figures."
    table_content=bank_table
    answers="700 || 800 || 600 || 750"
@@ -265,7 +265,7 @@ Real business problems rarely look like "$50 + 10$". They look like stories.
 
 {% include question_numerical.html
     id="bus_prob_breakeven"
-    title="Break-Even Analysis"
+    title="12 Break-Even Analysis"
     question_text="A bakery has fixed monthly costs (Rent, Insurance) of £2,000. <br> They sell cakes for £5.00 each. <br> It costs them £1.00 in ingredients to make each cake. <br> How many cakes must they sell to cover their costs (Break Even)?"
     correct_answer="500"
     tolerance="0"
@@ -274,7 +274,7 @@ Real business problems rarely look like "$50 + 10$". They look like stories.
 
 {% include question_numerical.html
     id="bus_prob_commission"
-    title="Sales Commission Calculation"
+    title="13 Sales Commission Calculation"
     question_text="A salesperson earns a basic salary of £1,500 per month. <br> They also earn 10% commission on any sales **above** £10,000. <br> In March, they made £18,000 in sales. Calculate their **total pay** for the month."
     correct_answer="2300"
     tolerance="0"
@@ -283,17 +283,16 @@ Real business problems rarely look like "$50 + 10$". They look like stories.
 
 {% include question_numerical.html
     id="bus_prob_fx"
-    title="Importing Costs"
+    title="14 Importing Costs"
     question_text="A UK business buys a machine from the USA for $6,000 (USD). <br> The exchange rate is £1 = $1.25. <br> The shipping company charges a flat fee of £200. <br> What is the total cost in Pounds Sterling (£)?"
     correct_answer="5000"
     tolerance="0.01"
     solution_text="1. Convert machine cost: $6000 \div 1.25 = 4800$. <br> 2. Add shipping: $4800 + 200 = 5000$."
 %}
 
-<!-- PROBLEM 6: NET PAY ESTIMATION -->
 {% include question_numerical.html
     id="bus_prob_tax"
-    title="Net Pay Calculation"
+    title="15 Net Pay Calculation"
     question_text="An employee's gross monthly pay is £3,000. <br> Income Tax is calculated as 20% of their earnings **after** a tax-free allowance of £1,000 is deducted. <br> Calculate their Net Pay (Take home pay)."
     correct_answer="2600"
     tolerance="0"
