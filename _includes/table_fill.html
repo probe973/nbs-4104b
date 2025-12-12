@@ -1,26 +1,35 @@
 <div class="question-container" id="question-{{ include.id }}">
-    <h3>Question: {{ include.title | default: "Fill in the Table" }}</h3>
+    <h3>Question: {{ include.title }}</h3>
+    
     <div class="question-content">
         {{ include.question_text | markdownify }}
     </div>
 
-    <div id="table-container-{{ include.id }}" class="table-fill-wrapper">
+    <!-- Container for the table inputs -->
+    <div id="table-container-{{ include.id }}" class="table-responsive">
         {{ include.table_content }}
     </div>
 
-    <div class="action-buttons">
-        <!-- UPDATED: We now pass include.tolerance -->
-        <button class="btn" onclick="checkTableFill('{{ include.id }}', '{{ include.answers }}', '{{ include.tolerance | default: 0 }}')">Check Answer</button>
+    <div style="margin-top: 15px;">
+        <button class="btn" onclick="checkTableFill('{{ include.id }}', '{{ include.answers }}', '{{ include.tolerance | default: 0 }}')">Check Answers</button>
         
         {% if include.solution_text %}
-            <button class="btn btn-primary solution-toggle-button" onclick="toggleSolution('solution-{{ include.id }}', this)">Show Solution</button>
+            <button 
+                class="btn btn-primary solution-toggle-button" 
+                id="btn-sol-{{ include.id }}"
+                aria-expanded="false" 
+                aria-controls="solution-{{ include.id }}" 
+                onclick="toggleSolution('solution-{{ include.id }}', this)">
+                Show Solution
+            </button>
         {% endif %}
     </div>
 
-    <div id="feedback-{{ include.id }}"></div>
-
+    <!-- Live region for feedback -->
+    <div id="feedback-{{ include.id }}" aria-live="polite" class="feedback"></div>
+    
     {% if include.solution_text %}
-        <div id="solution-{{ include.id }}" class="solution-content">
+        <div id="solution-{{ include.id }}" class="solution-content" style="display:none;">
             <h4>Solution:</h4>
             {{ include.solution_text | markdownify }}
         </div>
