@@ -16,6 +16,12 @@ To simplify an expression, we combine **like terms**.
 *   **Like Terms** share the exact same variable combination raised to the same power (e.g., $x^2$ and $3x^2$ are like terms; $x$ and $x^2$ are not).
 *   **Method:** Sum or subtract the **coefficients** (the numbers) of the like terms. The variable part remains unchanged.
 
+**Example:** Simplify $4x + 5y - 2x$
+1.  Identify the like terms: $4x$ and $-2x$.
+2.  Combine their coefficients: $4 - 2 = 2$.
+3.  The term $5y$ is unique, so it remains unchanged.
+4.  **Result:** $2x + 5y$
+
 </div>
 
 {% include question_dropdown.html
@@ -67,6 +73,11 @@ When working with exponents (indices) involving multiple variables and coefficie
     *   Divide coefficients, **subtract** indices for matching bases.
 3.  **Power of a Power:** $(Ax^m)^n = A^n x^{m \times n}$
     *   Raise the coefficient to the power, **multiply** the variable indices.
+
+**Example:** Simplify $2x^3 \times 4x^5$
+1.  Multiply coefficients: $2 \times 4 = 8$.
+2.  Add indices of $x$: $3 + 5 = 8$.
+3.  **Result:** $8x^8$.
 
 </div>
 
