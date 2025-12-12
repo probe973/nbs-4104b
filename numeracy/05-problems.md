@@ -135,7 +135,7 @@ Tables can be used to calculate the total cost of inventory or services. This in
 
 {% include table_fill.html 
    id="table_inventory" 
-   title="6: Inventory Valuation"
+   title="6"
    question_text="Calculate the total cost for each item line, and then the Grand Total."
    table_content=inventory_table
    answers="455 || 600 || 305 || 1360"
@@ -259,7 +259,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 {% include table_fill.html 
    id="bus_prob_statement" 
-   title="11 Reconciling a Bank Statement"
+   title="11"
    question_text="Fill in the missing values in the bank statement. You will need to look at how the <strong>Balance</strong> changes to figure out the missing 'Money In' or 'Money Out' figures."
    table_content=bank_table
    answers="700 || 800 || 600 || 750"
