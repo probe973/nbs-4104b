@@ -21,6 +21,7 @@ To solve an equation like $ax + b = c$, you must isolate $x$.
     $$3x = 12$$
 2.  **Isolate $x$ (remove the $\times 3$):** Divide both sides by 3.
     $$x = 12 \div 3$$
+    
     **Result:** $x = 4$
 
 </div>
