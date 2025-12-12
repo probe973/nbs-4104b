@@ -1,12 +1,24 @@
 <div class="question-container" id="question-{{ include.id }}">
-    <h3>Question: {{ include.title | default: "Solution Dropdown" }}</h3>
+    <h3>Question: {{ include.title }}</h3>
+    
     <div class="question-content">
         {{ include.question_text | markdownify }}
     </div>
 
-    <button class="btn btn-primary" onclick="toggleSolution('solution-{{ include.id }}')">Show Solution</button>
+    <!-- No input field needed for this type, just the reveal button -->
+    
+    <div>
+        <button 
+            class="btn btn-primary solution-toggle-button" 
+            id="btn-sol-{{ include.id }}"
+            aria-expanded="false" 
+            aria-controls="solution-{{ include.id }}" 
+            onclick="toggleSolution('solution-{{ include.id }}', this)">
+            Show Solution
+        </button>
+    </div>
 
-    <div id="solution-{{ include.id }}" class="solution-content">
+    <div id="solution-{{ include.id }}" class="solution-content" style="display:none;">
         <h4>Solution:</h4>
         {{ include.solution_text | markdownify }}
     </div>
