@@ -1,17 +1,36 @@
 // assets/js/scripts.js
 
-// Function to toggle visibility of solution content
-function toggleSolution(solutionId) {
+/**
+ * ACCESSIBLE SOLUTION TOGGLE
+ * Handles opening/closing the solution box and updating screen reader state.
+ * @param {string} solutionId - The ID of the div to show/hide.
+ * @param {HTMLElement} btnElement - The button that was clicked.
+ */
+function toggleSolution(solutionId, btnElement) {
     const solutionElement = document.getElementById(solutionId);
-    if (solutionElement) {
-        solutionElement.classList.toggle('visible');
-        const button = solutionElement.previousElementSibling; // Get the button element (assuming it's right before the solution div)
-        if (button && button.tagName === 'BUTTON' && button.textContent.includes('Solution')) {
-            if (solutionElement.classList.contains('visible')) {
-                button.textContent = 'Hide Solution';
-            } else {
-                button.textContent = 'Show Solution';
-            }
+    
+    if (!solutionElement) return;
+
+    // Check if currently hidden (or empty style)
+    if (solutionElement.style.display === "none" || solutionElement.style.display === "") {
+        // Show it
+        solutionElement.style.display = "block";
+        
+        // Update text
+        if (btnElement) {
+            btnElement.textContent = 'Hide Solution';
+            // ACCESSIBILITY: Tell screen reader it is expanded
+            btnElement.setAttribute("aria-expanded", "true");
+        }
+    } else {
+        // Hide it
+        solutionElement.style.display = "none";
+        
+        // Update text
+        if (btnElement) {
+            btnElement.textContent = 'Show Solution';
+            // ACCESSIBILITY: Tell screen reader it is collapsed
+            btnElement.setAttribute("aria-expanded", "false");
         }
     }
 }
