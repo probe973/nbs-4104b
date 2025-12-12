@@ -458,23 +458,28 @@ input[type=number] {
 }
 
 
-/* Style for the inputs inside the table */
-.table-fill-wrapper input {
-    border: 1px solid #ccc;
-    padding: 5px;
+/* --- TABLE INPUT STYLES --- */
+/* Matches the HTML structure for table inputs */
+td input[type="number"] {
+    border: 1px solid #767676; /* High contrast default border */
+    padding: 8px;
     border-radius: 4px;
-    width: 100%; /* Or a fixed width like 80px */
+    width: 100%;
+    min-width: 80px; /* Ensures clickable area isn't too small */
     box-sizing: border-box;
 }
 
-/* Correct answer style */
-.table-fill-wrapper input.input-correct {
-    border-color: #28a745;
-    background-color: #e6fffa;
+/* --- VALIDATION STATES (Accessibility) --- */
+/* These classes are added by the JavaScript */
+
+/* Dark Green Border (High Contrast) */
+input.input-correct {
+    border: 3px solid #006400 !important; 
+    background-color: #e8f5e9;
 }
 
-/* Incorrect answer style */
-.table-fill-wrapper input.input-incorrect {
-    border-color: #dc3545;
-    background-color: #ffe6e6;
+/* Dark Red Border (High Contrast) */
+input.input-incorrect {
+    border: 3px solid #8b0000 !important; 
+    background-color: #fbe9e7;
 }
