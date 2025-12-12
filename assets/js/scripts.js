@@ -3,39 +3,38 @@
 /**
  * ACCESSIBLE SOLUTION TOGGLE
  * Handles opening/closing the solution box and updating screen reader state.
- * @param {string} solutionId - The ID of the div to show/hide.
- * @param {HTMLElement} btnElement - The button that was clicked.
  */
 function toggleSolution(solutionId, btnElement) {
     const solutionElement = document.getElementById(solutionId);
     
     if (!solutionElement) return;
 
-    // Check if currently hidden (or empty style)
+    // Check if currently hidden
     if (solutionElement.style.display === "none" || solutionElement.style.display === "") {
         // Show it
         solutionElement.style.display = "block";
         
-        // Update text
+        // Update button text and ARIA state
         if (btnElement) {
             btnElement.textContent = 'Hide Solution';
-            // ACCESSIBILITY: Tell screen reader it is expanded
             btnElement.setAttribute("aria-expanded", "true");
         }
     } else {
         // Hide it
         solutionElement.style.display = "none";
         
-        // Update text
+        // Update button text and ARIA state
         if (btnElement) {
             btnElement.textContent = 'Show Solution';
-            // ACCESSIBILITY: Tell screen reader it is collapsed
             btnElement.setAttribute("aria-expanded", "false");
         }
     }
 }
 
-// Function to check numerical answers
+/**
+ * ACCESSIBLE NUMERICAL CHECK
+ * Updates visual classes AND aria-invalid state.
+ */
 function checkNumericalAnswer(id, correctAnswer, toleranceStr) {
     const inputElement = document.getElementById(`input-${id}`);
     const feedbackElement = document.getElementById(`feedback-${id}`);
@@ -43,32 +42,46 @@ function checkNumericalAnswer(id, correctAnswer, toleranceStr) {
     const correct = parseFloat(correctAnswer);
     const tolerance = parseFloat(toleranceStr);
 
+    // Reset state
     feedbackElement.classList.remove('feedback-correct', 'feedback-incorrect');
-    feedbackElement.textContent = ''; // Clear previous feedback
+    feedbackElement.textContent = ''; 
+    inputElement.setAttribute('aria-invalid', 'false'); // Reset accessibility state
 
     if (isNaN(userAnswer)) {
         feedbackElement.textContent = 'Please enter a number.';
         feedbackElement.classList.add('feedback-incorrect');
+        inputElement.setAttribute('aria-invalid', 'true'); // Flag error to screen reader
         return;
     }
 
     if (Math.abs(userAnswer - correct) <= tolerance) {
         feedbackElement.textContent = 'Correct!';
         feedbackElement.classList.add('feedback-correct');
+        // valid state remains false (not invalid)
     } else {
         feedbackElement.textContent = 'Incorrect. Try again!';
         feedbackElement.classList.add('feedback-incorrect');
+        inputElement.setAttribute('aria-invalid', 'true'); // Flag error to screen reader
     }
 }
 
-// Function to check multiple choice answers
+/**
+ * ACCESSIBLE MULTIPLE CHOICE CHECK
+ * Updates visual classes AND aria-invalid state on the selected radio button.
+ */
 function checkMultipleChoice(id, correctAnswer) {
     const formElement = document.getElementById(`form-${id}`);
     const feedbackElement = document.getElementById(`feedback-${id}`);
     const selectedOption = formElement.querySelector(`input[name="choice-${id}"]:checked`);
+    
+    // Clear previous states from ALL options in this group
+    const allOptions = formElement.querySelectorAll(`input[name="choice-${id}"]`);
+    allOptions.forEach(opt => {
+        opt.setAttribute('aria-invalid', 'false');
+    });
 
     feedbackElement.classList.remove('feedback-correct', 'feedback-incorrect');
-    feedbackElement.textContent = ''; // Clear previous feedback
+    feedbackElement.textContent = ''; 
 
     if (!selectedOption) {
         feedbackElement.textContent = 'Please select an option.';
@@ -82,18 +95,22 @@ function checkMultipleChoice(id, correctAnswer) {
     } else {
         feedbackElement.textContent = 'Incorrect. Try again!';
         feedbackElement.classList.add('feedback-incorrect');
+        // ACCESSIBILITY: Mark the specific selected radio button as invalid
+        selectedOption.setAttribute('aria-invalid', 'true');
     }
 }
 
-// Function to check Fill in the Blanks Table (Numerical Version)
+/**
+ * ACCESSIBLE TABLE FILL CHECK
+ * Updates visual classes AND sets aria-invalid on specific cells.
+ */
 function checkTableFill(id, answersString, toleranceStr) {
     const container = document.getElementById(`table-container-${id}`);
     const feedbackElement = document.getElementById(`feedback-${id}`);
     const inputs = container.querySelectorAll('input');
     
-    // Split answers by '||'
     const answers = answersString.split('||').map(s => parseFloat(s.trim()));
-    const tolerance = parseFloat(toleranceStr || 0); // Default to 0 if not provided
+    const tolerance = parseFloat(toleranceStr || 0);
 
     feedbackElement.classList.remove('feedback-correct', 'feedback-incorrect');
     feedbackElement.textContent = '';
@@ -109,12 +126,16 @@ function checkTableFill(id, answersString, toleranceStr) {
         // Remove previous styling
         input.classList.remove('input-correct', 'input-incorrect');
 
-        // Check if input is a valid number AND within tolerance
+        // Check logic
         if (!isNaN(userVal) && Math.abs(userVal - correctVal) <= tolerance) {
             input.classList.add('input-correct');
+            // ACCESSIBILITY: Explicitly state this cell is valid
+            input.setAttribute('aria-invalid', 'false');
         } else {
             input.classList.add('input-incorrect');
             allCorrect = false;
+            // ACCESSIBILITY: Explicitly state this cell is invalid
+            input.setAttribute('aria-invalid', 'true');
         }
     });
 
