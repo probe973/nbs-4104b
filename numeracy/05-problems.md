@@ -94,10 +94,10 @@ Tables can be used to calculate the total cost of inventory or services. This in
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Item</th>
-      <th>Quantity</th>
-      <th>Unit Cost (£)</th>
-      <th>Total Cost (£)</th>
+      <th scope="col">Item</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Unit Cost (£)</th>
+      <th scope="col">Total Cost (£)</th>
     </tr>
   </thead>
   <tbody>
@@ -105,25 +105,29 @@ Tables can be used to calculate the total cost of inventory or services. This in
       <td>Hard Drives</td>
       <td>10</td>
       <td>45.50</td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Total Cost for Hard Drives"></td>
     </tr>
     <tr>
       <td>Monitors</td>
       <td>5</td>
       <td>120.00</td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Total Cost for Monitors"></td>
     </tr>
     <tr>
       <td>Keyboards</td>
       <td>20</td>
       <td>15.25</td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Total Cost for Keyboards"></td>
     </tr>
     <tr>
       <td><strong>GRAND TOTAL</strong></td>
       <td></td>
       <td></td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Grand Total Cost"></td>
     </tr>
   </tbody>
 </table>
@@ -202,19 +206,19 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Money In (+)</th>
-      <th>Money Out (-)</th>
-      <th>Balance</th>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+      <th scope="col">Money In (+)</th>
+      <th scope="col">Money Out (-)</th>
+      <th scope="col">Balance</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>01 Jan</td>
       <td>Opening Balance</td>
-      <td></td>
-      <td></td>
+      <td>---</td>
+      <td>---</td>
       <td><strong>£1,200</strong></td>
     </tr>
     <tr>
@@ -222,12 +226,14 @@ In this section, you will apply your numeracy skills to solve common problems. Y
       <td>Office Rent</td>
       <td></td>
       <td>500</td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Balance after Office Rent"></td>
     </tr>
     <tr>
       <td>10 Jan</td>
       <td>Client Payment</td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Money In from Client Payment"></td>
       <td></td>
       <td><strong>£1,500</strong></td>
     </tr>
@@ -235,7 +241,8 @@ In this section, you will apply your numeracy skills to solve common problems. Y
       <td>15 Jan</td>
       <td>Staff Wages</td>
       <td></td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Money Out for Staff Wages"></td>
       <td><strong>£900</strong></td>
     </tr>
     <tr>
@@ -243,7 +250,8 @@ In this section, you will apply your numeracy skills to solve common problems. Y
       <td>Utility Bill</td>
       <td></td>
       <td>150</td>
-      <td><input type="number" step="any"></td>
+      <!-- ACCESSIBILITY: Label added -->
+      <td><input type="number" step="any" aria-label="Balance after Utility Bill"></td>
     </tr>
   </tbody>
 </table>
@@ -251,7 +259,7 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 
 {% include table_fill.html 
    id="bus_prob_statement" 
-   title="11 Bank Statement"
+   title="11 Reconciling a Bank Statement"
    question_text="Fill in the missing values in the bank statement. You will need to look at how the <strong>Balance</strong> changes to figure out the missing 'Money In' or 'Money Out' figures."
    table_content=bank_table
    answers="700 || 800 || 600 || 750"
