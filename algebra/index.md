@@ -24,7 +24,7 @@ Here you will find links to questions on algebra topics.
     <a href="{{ "/algebra/02-solving_equations.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Fractions</h3>
+                <h3>Solving Linear Equations</h3>
                 <p>Questions on solving linear equations.</p>
             </div>
         </div>
