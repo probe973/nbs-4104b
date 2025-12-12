@@ -67,12 +67,23 @@ To simplify an expression, we combine **like terms**.
 
 When working with exponents (indices) involving multiple variables and coefficients, apply the laws systematically.
 
-1.  **Multiplication:** $Ax^m \times Bx^n = (A \times B)x^{m+n}$
-    *   Multiply coefficients, **add** indices for matching bases.
-2.  **Division:** $\frac{Ax^m}{Bx^n} = (\frac{A}{B})x^{m-n}$
-    *   Divide coefficients, **subtract** indices for matching bases.
-3.  **Power of a Power:** $(Ax^m)^n = A^n x^{m \times n}$
-    *   Raise the coefficient to the power, **multiply** the variable indices.
+### Part 2: Laws of Indices
+
+When variables have exponents (indices), we use three primary laws to simplify them.
+
+**1. Multiplication Law**
+Multiply the coefficients, **add** the indices.
+$$ Ax^m \times Bx^n = (AB)x^{m+n} $$
+
+**2. Division Law**
+Divide the coefficients, **subtract** the indices.
+$$ \frac{Ax^m}{Bx^n} = \left(\frac{A}{B}\right)x^{m-n} $$
+
+**3. Power Law**
+Raise the coefficient to the power, **multiply** the indices.
+$$ (Ax^m)^n = A^n x^{mn} $$
+
+*Note: Coefficients (the numbers in front) behave normally: multiply or divide them as standard numbers.*
 
 **Example:** Simplify $2x^3 \times 4x^5$
 1.  Multiply coefficients: $2 \times 4 = 8$.
