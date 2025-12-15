@@ -71,7 +71,7 @@ When the required subject appears on both sides of the equation, you must collec
 
    $$x(a-c)=d+b$$
 
-4.  **Divide both sides by $$a-c$$
+4.  **Divide both sides by $$a-c$$**
 
     **Result:** $x = \frac{d+b}{a-c}$
 
@@ -88,7 +88,7 @@ When the required subject appears on both sides of the equation, you must collec
     id="alg_re_5"
     title="5"
     question_text="Make $p$ the subject of: $gt+hp=60-p+r$"
-    solution_text="Add $p$ to both sides and subtract $gt$ from both sides: <br> $hp+p=60+r-gt$ <br> Factor $p$: <br> $p(h+1)=60+r-gt <br> Divide both sides by $h+1$: <br> $p=\frac{60+r-gt}{h+1}$ <br> **Answer:** $p=\frac{60+r-gt}{h+1}$"
+    solution_text="Add $p$ to both sides and subtract $gt$ from both sides: <br> $hp+p=60+r-gt$ <br> Factor $p$: <br> $p(h+1)=60+r-gt$ <br> Divide both sides by $h+1$: <br> $p=\frac{60+r-gt}{h+1}$ <br> **Answer:** $p=\frac{60+r-gt}{h+1}$"
 %}
 <br><br>
 
