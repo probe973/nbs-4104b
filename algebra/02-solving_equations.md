@@ -129,15 +129,19 @@ If the unknown term involves division (a fraction), use multiplication to elimin
 ### Part 3: Unknowns on Both Sides
 
 When $x$ appears on both sides of the equation, you must collect them on one side.
+
 **Tip:** Move the smaller $x$ term to the side of the larger $x$ term to keep the numbers positive.
 
 **Example:** Solve $5x - 2 = 3x + 8$
 
 1.  **Move the $x$ terms:** Subtract $3x$ from both sides.
+
     $$2x - 2 = 8$$
 2.  **Move the constant:** Add 2 to both sides.
+
     $$2x = 10$$
 3.  **Solve:** Divide by 2.
+
     **Result:** $x = 5$
 
 </div>
