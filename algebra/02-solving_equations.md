@@ -17,9 +17,12 @@ To solve an equation like $ax + b = c$, you must isolate $x$.
 **Example:** Solve $3x + 5 = 17$
 
 1.  **Eliminate the constant (+5):** Subtract 5 from both sides.
+
     $$3x = 17 - 5$$
+
     $$3x = 12$$
 2.  **Isolate $x$ (remove the $\times 3$):** Divide both sides by 3.
+
     $$x = 12 \div 3$$
     
     **Result:** $x = 4$
@@ -73,9 +76,12 @@ If the unknown term involves division (a fraction), use multiplication to elimin
 **Example:** Solve $\frac{x}{4} - 3 = 2$
 
 1.  **Eliminate the constant (-3):** Add 3 to both sides.
+
     $$\frac{x}{4} = 5$$
 2.  **Remove the denominator ($\div 4$):** Multiply both sides by 4.
+
     $$x = 5 \times 4$$
+
     **Result:** $x = 20$
 
 </div>
@@ -183,10 +189,15 @@ If an equation contains brackets, it usually helps to **expand** the brackets fi
 **Example:** Solve $2(3x - 1) = 16$
 
 1.  **Expand:** Multiply the 2 by everything inside.
+
     $$6x - 2 = 16$$
+    
 2.  **Solve:** Add 2 to both sides.
+
     $$6x = 18$$
+    
 3.  **Isolate:** Divide by 6.
+
     **Result:** $x = 3$
 
 </div>
