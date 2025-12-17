@@ -9,6 +9,12 @@ This workshop focuses on gradients and the equation of a straight line
 
 $$y=mx+c$$
 
+You can download a pdf of this resource <a href="{{ "/assets/pdf/straight_lines.pdf" | relative_url }}" target="_blank">here</a>.
+
+The solutions pdf can be found <a href="{{ "/assets/pdf/straight_lines_solutions.pdf" | relative_url }}" target="_blank">here</a>.  
+
+Please be mindful of the environment when choosing whether you need to print.
+
 <div class="instructions" markdown="1">
 
 ### Gradient
@@ -192,6 +198,13 @@ $$y=3x-1$$
     solution_text="$m=\frac{6.2-2.45}{2-0.5}=2.5$ <br> $y=2.5x+c$ <br> $6.2=2.5(2)+c \implies c=1.2$ <br> $y=2.5x+1.2$"
 %}
 
+{% include question_dropdown.html
+    id="sl_find_4"
+    title="12"
+    question_text="Use your answer from question 11 to write the equation of this line in the form
+    $$ax+by+c=0$$"
+    solution_text="$y=2.5x+1.2$ <br> Multiply all terms by 10: $10y=25x+12$ <br> Subtract $10y$ from both sides: $0=25x+12-10y$ <br> $$25x-10y+12=0$$ <br> Note also that $-25x+10y-12=0$ is also a correct solution."
+%}
 
 <div style="text-align: center; margin-top: 3em;">
     <a href="{{ "/algebra/" | relative_url }}">← Return to Algebra Menu</a>
