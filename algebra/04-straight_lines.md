@@ -202,7 +202,7 @@ $$y=3x-1$$
     id="sl_find_4"
     title="12"
     question_text="Use your answer from question 11 to write the equation of this line in the form
-    $$ax+by+c=0$$"
+    $$ax+by+c=0$$ <br> Where $a$, $b$, and $c$ are all integers (whole numbers)."
     solution_text="$y=2.5x+1.2$ <br> Multiply all terms by 10: $10y=25x+12$ <br> Subtract $10y$ from both sides: $0=25x+12-10y$ <br> $$25x-10y+12=0$$ <br> Note also that $-25x+10y-12=0$ is also a correct solution."
 %}
 
