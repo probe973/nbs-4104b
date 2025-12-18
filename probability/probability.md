@@ -163,6 +163,112 @@ The number of employees based on the number of complete years they've worked the
     id="prob_prob_11"
     title="1d"
     question_text="What is the probability that in a weekly draw there are no prizes to employees who have been there more then 5 years?"
-    solution_text=" $P(\text{no prize any over 5 yr})=\frac{37}{80} \times \frac{36}{79}=\frac{333}{1580}=0.211=21.1\%$"
+    solution_text="At the first draw there are $2 \times 6 + 1 \times 7 + 3\times 8 = 43$ tickets for those who've been there more than 5 years, so $80-43=37$ tickets are non-winners. <br> $P(\text{no prize any over 5 yr})=\frac{37}{80} \times \frac{36}{79}=\frac{333}{1580}=0.211=21.1\%$"
 %}
 
+### Question 2
+
+Below is an incomplete two-way table showing the preferences of 500 people to two operating systems (Pear and Robot) and their self-declared interest in technology (low, medium, high).
+
+**Part a**
+
+{% capture tech_table %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col" rowspan="2" style="vertical-align: middle;">Operating System</th>
+      <th scope="col" colspan="3" style="text-align: center;">Tech Interest</th>
+      <th scope="col" rowspan="2" style="vertical-align: middle;">Total</th>
+    </tr>
+    <tr>
+      <th scope="col">Low</th>
+      <th scope="col">Medium</th>
+      <th scope="col">High</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Pear</td>
+      <td>95</td>
+      <td><input type="number" step="any" aria-label="Pear Medium Interest"></td>
+      <td><input type="number" step="any" aria-label="Pear High Interest"></td>
+      <td>350</td>
+    </tr>
+    <tr>
+      <td>Robot</td>
+      <td><input type="number" step="any" aria-label="Robot Low Interest"></td>
+      <td>90</td>
+      <td>40</td>
+      <td><input type="number" step="any" aria-label="Robot Total"></td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td><input type="number" step="any" aria-label="Total Low Interest"></td>
+      <td>300</td>
+      <td><input type="number" step="any" aria-label="Total High Interest"></td>
+      <td><input type="number" step="any" aria-label="Grand Total"></td>
+    </tr>
+  </tbody>
+</table>
+{% endcapture %}
+
+{% include table_fill.html 
+   id="prob_prob_12" 
+   title="2 a"
+   question_text="Complete the two-way table"
+   table_content=tech_table
+   answers="210 || 45 || 20 || 150 || 115 || 85 || 500"
+   tolerance="0" 
+   solution_text="1. **Robot Total:** Grand Total (500) - Pear Total (350) = **150**. <br> 2. **Robot Low:** Robot Total (150) - Medium (90) - High (40) = **20**. <br> 3. **Total Low:** Pear (95) + Robot (20) = **115**. <br> 4. **Total High:** Grand Total (500) - Low (115) - Medium (300) = **85**. <br> 5. **Pear High:** Total High (85) - Robot High (40) = **45**. <br> 6. **Pear Medium:** Pear Total (350) - Low (95) - High (45) = **210**."
+
+**Part b**
+
+What is the probability that a randomly selected person:
+
+{% include question_dropdown.html
+    id="prob_prob_13"
+    title="2b i"
+    question_text="uses the Pear operating system?"
+    solution_text="$P(\text{Pear})=\frac{350}{500}=\frac{7}{10}=0.7$"
+%}
+
+{% include question_dropdown.html
+    id="prob_prob_14"
+    title="2b ii"
+    question_text="has a medium interest in technology?"
+    solution_text="$P(\text{Medium})=\frac{300}{500}=\frac{3}{5}=0.6$"
+%}
+
+{% include question_dropdown.html
+    id="prob_prob_15"
+    title="2b iii"
+    question_text="has a medium interest and uses the Robot operating system?"
+    solution_text="$P(\text{Medium AND Robot})=\frac{90}{500}=\frac{9}{50}=0.18$"
+%}
+
+{% include question_dropdown.html
+    id="prob_prob_16"
+    title="2b iv"
+    question_text="has a low or medium interest and uses the Pear operating system?"
+    solution_text="$P(\text{Low/medium AND Pear})=\frac{95+210}{500}=\frac{61}{100}=0.61$"
+%}
+
+{% include question_dropdown.html
+    id="prob_prob_17"
+    title="2b v"
+    question_text="has a high technology interest, given that they use the Robot operating system?"
+    solution_text="$P(\text{High GIVEN Robot})=\frac{40}{150}=\frac{4}{15}=0.27$"
+%}
+
+{% include question_dropdown.html
+    id="prob_prob_18"
+    title="2b vi"
+    question_text="uses the Robot operating system, given they have a low technology interest?"
+    solution_text="$P(\text{Robot GIVEN Low})=\frac{20}{115}=\frac{4}{23}=0.17$"
+%}
+
+<div style="text-align: center; margin-top: 3em;">
+    <a href="{{ "/probability/" | relative_url }}">← Return to Probability Menu</a>
+</div>
+
+{% include pagination.html %}
