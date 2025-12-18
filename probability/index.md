@@ -12,7 +12,7 @@ Here you will find links to questions on probability topics.
 
 <div class="card-menu">
   
-    <a href="{{ "/numeracy/01-one_event.html" | relative_url }}" class="card">
+    <a href="{{ "/probability/01-one_event.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Single Event</h3>
@@ -21,7 +21,7 @@ Here you will find links to questions on probability topics.
         </div>
     </a>
 
-    <a href="{{ "/numeracy/02-two-way_tables.html" | relative_url }}" class="card">
+    <a href="{{ "/probability/02-two-way_tables.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Two-way Tables</h3>
@@ -30,7 +30,7 @@ Here you will find links to questions on probability topics.
         </div>
     </a>
 
-    <a href="{{ "/numeracy/03-tree.html" | relative_url }}" class="card">
+    <a href="{{ "/probability/03-tree.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Tree Diagrams</h3>
@@ -39,7 +39,7 @@ Here you will find links to questions on probability topics.
         </div>
     </a>
 
-    <a href="{{ "/numeracy/04-formula.html" | relative_url }}" class="card">
+    <a href="{{ "/probability/04-formula.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Probability Formula</h3>
@@ -48,7 +48,7 @@ Here you will find links to questions on probability topics.
         </div>
     </a>
 
-    <a href="{{ "/numeracy/05-problems.html" | relative_url }}" class="card">
+    <a href="{{ "/probability/05-problems.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
                 <h3>Probability Problems</h3>
