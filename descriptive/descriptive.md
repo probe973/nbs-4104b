@@ -15,31 +15,32 @@ A small company employs 82 people. People working at the company are either in e
 
 </div>
 
-<!-- 1a -->
+<!-- 1a: Stem and Leaf -->
+<!-- ACCESSIBILITY: Used semantic list for data, styled to look like Stem/Leaf -->
 {% include question_dropdown.html
     id="ds_q1a"
     title="1a"
     question_text="Display these data as a stem and leaf diagram."
-    solution_text="<strong>Key:</strong> $4 | 8 = 48$ (£000s)
-    <pre style='font-family: monospace; font-size: 1.1em; line-height: 1.2; margin-top: 10px;'>
- 4 | 8
- 5 |
- 6 | 0 0 0 3
- 7 | 2 8
- 8 | 0 5
- 9 | 5 8
-10 | 7
-    </pre>"
+    solution_text="<p><strong>Key:</strong> 4 &#124; 8 = 48 (£000s)</p>
+    <div style='font-family: monospace; font-size: 1.2em;'>
+    4 &#124; 8 <br>
+    5 &#124; <br>
+    6 &#124; 0 0 0 3 <br>
+    7 &#124; 2 8 <br>
+    8 &#124; 0 5 <br>
+    9 &#124; 5 8 <br>
+    10 &#124; 7
+    </div>"
 %}
 
-<!-- 1b: Broken down into specific inputs to check the values -->
+<!-- 1b -->
 {% include question_numerical.html
     id="ds_q1b_median"
     title="1b i"
     question_text="Find the **median**."
     correct_answer="75"
     tolerance="0"
-    solution_text="Data ordered: 48, 60, 60, 60, 63, 72 | 78, 80, 85, 95, 98, 107. Median is average of 6th and 7th: $(72+78)/2 = 75$."
+    solution_text="Ordered data: 48, 60, 60, 60, 63, 72 (MIDDLE) 78, 80, 85, 95, 98, 107. <br> Median is average of 6th and 7th: $(72+78)/2 = 75$."
 %}
 
 {% include question_numerical.html
@@ -48,7 +49,7 @@ A small company employs 82 people. People working at the company are either in e
     question_text="Find the **lower quartile**."
     correct_answer="60"
     tolerance="0"
-    solution_text="The median of the lower half (48, 60, 60, 60, 63, 72). Average of 60 and 60 is 60."
+    solution_text="The median of the lower half (48, 60, 60, 60, 63, 72). <br> Average of 60 and 60 is 60."
 %}
 
 {% include question_numerical.html
@@ -57,7 +58,7 @@ A small company employs 82 people. People working at the company are either in e
     question_text="Find the **upper quartile**."
     correct_answer="90"
     tolerance="0"
-    solution_text="The median of the upper half (78, 80, 85, 95, 98, 107). Average of 85 and 95 is 90."
+    solution_text="The median of the upper half (78, 80, 85, 95, 98, 107). <br> Average of 85 and 95 is 90."
 %}
 
 {% include question_numerical.html
@@ -66,7 +67,7 @@ A small company employs 82 people. People working at the company are either in e
     question_text="Find the **inter-quartile range (IQR)**."
     correct_answer="30"
     tolerance="0"
-    solution_text="$IQR = UQ - LQ = 90 - 60 = 30$."
+    solution_text="$IQR = UQ - LQ$. <br> $90 - 60 = 30$."
 %}
 
 <!-- 1c -->
@@ -76,7 +77,7 @@ A small company employs 82 people. People working at the company are either in e
     question_text="Find the arithmetic mean of these wages."
     correct_answer="75.5"
     tolerance="0.1"
-    solution_text="Sum = 906. Count = 12. Mean = $906 / 12 = 75.5$."
+    solution_text="Sum = 906. Count = 12. <br> Mean = $906 \div 12 = 75.5$."
 %}
 
 <br><br>
@@ -107,30 +108,22 @@ $$ s_{x}^{2} = \frac{\sum (x - \bar{x})^2}{n - 1} $$
     </tr>
     <tr>
       <td>95</td>
-      <!-- 95 - 79.5 = 15.5 -->
       <td><input type="number" step="any" aria-label="Difference for wage 95"></td>
-      <!-- 15.5^2 = 240.25 -->
       <td><input type="number" step="any" aria-label="Squared Difference for wage 95"></td>
     </tr>
     <tr>
       <td>98</td>
-      <!-- 98 - 79.5 = 18.5 -->
       <td><input type="number" step="any" aria-label="Difference for wage 98"></td>
-      <!-- 18.5^2 = 342.25 -->
       <td><input type="number" step="any" aria-label="Squared Difference for wage 98"></td>
     </tr>
     <tr>
       <td>72</td>
-      <!-- 72 - 79.5 = -7.5 -->
       <td><input type="number" step="any" aria-label="Difference for wage 72"></td>
-      <!-- 7.5^2 = 56.25 -->
       <td><input type="number" step="any" aria-label="Squared Difference for wage 72"></td>
     </tr>
     <tr>
       <td>60</td>
-      <!-- 60 - 79.5 = -19.5 -->
       <td><input type="number" step="any" aria-label="Difference for wage 60"></td>
-      <!-- 19.5^2 = 380.25 -->
       <td><input type="number" step="any" aria-label="Squared Difference for wage 60"></td>
     </tr>
     <tr>
@@ -141,31 +134,26 @@ $$ s_{x}^{2} = \frac{\sum (x - \bar{x})^2}{n - 1} $$
     <tr>
       <td>60</td>
       <td>-19.5</td>
-      <!-- 380.25 -->
       <td><input type="number" step="any" aria-label="Squared Difference for wage 60 row 7"></td>
     </tr>
     <tr>
       <td>85</td>
       <td>5.5</td>
-      <!-- 30.25 -->
       <td><input type="number" step="any" aria-label="Squared Difference for wage 85"></td>
     </tr>
     <tr>
       <td>78</td>
-      <!-- -1.5 -->
       <td><input type="number" step="any" aria-label="Difference for wage 78"></td>
       <td>2.25</td>
     </tr>
     <tr>
       <td>60</td>
-      <!-- -19.5 -->
       <td><input type="number" step="any" aria-label="Difference for wage 60 row 10"></td>
       <td>380.25</td>
     </tr>
     <tr>
       <td><strong>SUM</strong></td>
       <td></td>
-      <!-- Sum = 2568.5 -->
       <td><input type="number" step="any" aria-label="Sum of Squared Differences"></td>
     </tr>
   </tbody>
@@ -239,7 +227,7 @@ For the non-executive employees, you are given the following summary statistics:
     id="ds_q2a"
     title="2a"
     question_text="Draw side-by-side box and whisker plots for the executive and non-executive wages."
-    solution_text="**Non-Executive:** Min 24, Q1 32, Med 36, Q3 48, Max 74 (Min 24 + Range 50). <br> **Executive (from Q1):** Min 48, Q1 60, Med 75, Q3 90, Max 107. <br><br> ![Box plot showing Executive wage shifted significantly higher and wider than Non-Executive wage](/assets/images/placeholder_boxplot.png)"
+    solution_text="<strong>Executive:</strong> Min 48, Q1 60, Med 75, Q3 90, Max 107. <br> <strong>Non-Executive:</strong> Min 24, Q1 32, Med 36, Q3 48, Max 74. <br><br> ![Box plot showing Executive wage shifted significantly higher and wider than Non-Executive wage](/assets/images/placeholder_boxplot.png)"
 %}
 
 <!-- 2b -->
@@ -247,7 +235,7 @@ For the non-executive employees, you are given the following summary statistics:
     id="ds_q2b"
     title="2b"
     question_text="Compare the wages of the two groups."
-    solution_text="The executive wages are generally much higher (Median £75k vs £36k). The executive wages are also more spread out (IQR 30 vs 16)."
+    solution_text="The executive wages are generally much higher (Median £75k vs £36k). <br> The executive wages are also more spread out (IQR 30 vs 16)."
 %}
 
 <br><br>
@@ -343,8 +331,6 @@ The mean yearly distance travelled in a company car is 14,000 km and the varianc
     tolerance="0"
     solution_text="$\sqrt{4410000} = 2100$."
 %}
-
-
 
 <div style="text-align: center; margin-top: 3em;">
     <a href="{{ "/descriptive/" | relative_url }}">← Return to Descriptive Statistics Menu</a>
