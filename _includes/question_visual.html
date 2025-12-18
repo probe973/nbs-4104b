@@ -1,0 +1,45 @@
+<div class="question-container" id="question-{{ include.id }}">
+    
+    <h3 id="label-{{ include.id }}">Question: {{ include.title }}</h3>
+    
+    <div class="question-content">
+        {{ include.question_text | markdownify }}
+    </div>
+
+    <!-- Button Container -->
+    <div class="numerical-answer-container">
+        <div>
+            <button 
+                class="btn btn-primary solution-toggle-button" 
+                id="btn-sol-{{ include.id }}"
+                aria-expanded="false" 
+                aria-controls="solution-{{ include.id }}" 
+                onclick="toggleSolution('solution-{{ include.id }}', this)">
+                Show Solution
+            </button>
+        </div>
+    </div>
+
+    <!-- Hidden Solution Area -->
+    <div id="solution-{{ include.id }}" class="solution-content" style="display:none;">
+        <h4>Solution:</h4>
+        
+        <!-- Text Explanation -->
+        {% if include.solution_text %}
+            <div style="margin-bottom: 15px;">
+                {{ include.solution_text | markdownify }}
+            </div>
+        {% endif %}
+
+        <!-- Image Solution -->
+        {% if include.image_src %}
+            <figure style="margin: 1em 0;">
+                <img 
+                    src="{{ include.image_src | relative_url }}" 
+                    alt="{{ include.image_alt }}" 
+                    style="max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px;"
+                >
+            </figure>
+        {% endif %}
+    </div>
+</div>
