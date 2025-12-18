@@ -16,19 +16,24 @@ A small company employs 82 people. People working at the company are either in e
 </div>
 
 <!-- 1a: Stem and Leaf -->
-{% include question_dropdown.html
-    id="ds_q1a"
-    title="1a"
-    question_text="Display these data as a stem and leaf diagram."
-    solution_text="<p><strong>Key:</strong> 4 | 8 = 48 (£000s)</p>
-    <pre style='font-family: monospace; font-size: 1.1em;'>
+{% capture q1a_solution %}
+<p><strong>Key:</strong> 4 | 8 = 48 (£000s)</p>
+<pre style="font-family: monospace; font-size: 1.2em; line-height: 1.2;">
  4 | 8
  5 |
  6 | 0 0 0 3
  7 | 2 8
  8 | 0 5
  9 | 5 8
-10 | 7</pre>"
+10 | 7
+</pre>
+{% endcapture %}
+
+{% include question_dropdown.html
+    id="ds_q1a"
+    title="1a"
+    question_text="Display these data as a stem and leaf diagram."
+    solution_text=q1a_solution
 %}
 
 <!-- 1b -->
