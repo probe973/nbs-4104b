@@ -220,6 +220,7 @@ Below is an incomplete two-way table showing the preferences of 500 people to tw
    answers="210 || 45 || 20 || 150 || 115 || 85 || 500"
    tolerance="0" 
    solution_text="1. **Robot Total:** Grand Total (500) - Pear Total (350) = **150**. <br> 2. **Robot Low:** Robot Total (150) - Medium (90) - High (40) = **20**. <br> 3. **Total Low:** Pear (95) + Robot (20) = **115**. <br> 4. **Total High:** Grand Total (500) - Low (115) - Medium (300) = **85**. <br> 5. **Pear High:** Total High (85) - Robot High (40) = **45**. <br> 6. **Pear Medium:** Pear Total (350) - Low (95) - High (45) = **210**."
+%}
 
 **Part b**
 
