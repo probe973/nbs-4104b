@@ -16,21 +16,19 @@ A small company employs 82 people. People working at the company are either in e
 </div>
 
 <!-- 1a: Stem and Leaf -->
-<!-- ACCESSIBILITY: Used semantic list for data, styled to look like Stem/Leaf -->
 {% include question_dropdown.html
     id="ds_q1a"
     title="1a"
     question_text="Display these data as a stem and leaf diagram."
-    solution_text="<p><strong>Key:</strong> 4 &#124; 8 = 48 (£000s)</p>
-    <div style='font-family: monospace; font-size: 1.2em;'>
-    4 &#124; 8 <br>
-    5 &#124; <br>
-    6 &#124; 0 0 0 3 <br>
-    7 &#124; 2 8 <br>
-    8 &#124; 0 5 <br>
-    9 &#124; 5 8 <br>
-    10 &#124; 7
-    </div>"
+    solution_text="<p><strong>Key:</strong> 4 | 8 = 48 (£000s)</p>
+    <pre style='font-family: monospace; font-size: 1.1em;'>
+ 4 | 8
+ 5 |
+ 6 | 0 0 0 3
+ 7 | 2 8
+ 8 | 0 5
+ 9 | 5 8
+10 | 7</pre>"
 %}
 
 <!-- 1b -->
