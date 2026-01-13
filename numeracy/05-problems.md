@@ -299,10 +299,10 @@ In this section, you will apply your numeracy skills to solve common problems. Y
 {% include question_numerical.html
     id="bus_prob_tax"
     title="15 Net Pay"
-    question_text="An employee's gross monthly pay is £3,000. <br> Income Tax is calculated as 20% of their earnings **after** a tax-free allowance of £1,000 is deducted. <br> Calculate their Net Pay (Take home pay)."
-    correct_answer="2600"
+    question_text="An employee's gross monthly pay is £3,250. <br> Income Tax is calculated as 20% of their earnings **after** a tax-free allowance of £12,570 per year is deducted. <br> Calculate their net monthly pay (after income tax is deducted) to the nearest whole number."
+    correct_answer="2810"
     tolerance="0"
-    solution_text="1. Taxable amount: $3000 - 1000 = 2000$. <br> 2. Calculate Tax: $20\%$ of $2000 = 400$. <br> 3. Net Pay: $3000 (\text{Gross}) - 400 (\text{Tax}) = 2600$."
+    solution_text="1. Gross yearly: $3250 \times 12 = 39000$ <br> 2. Taxable amount: $39000 - 12570 = 26430$. <br> 3. Calculate Tax: $80\%$ of $26430 = 5286$. <br> 4. Net Pay Year: $39000 (\text{Gross}) - 5286 (\text{Tax}) = 33714$. <br> 5. Net Pay Month: $33714 \div 12 = 2809.5 = 2810$"
 %}
 
 <div style="text-align: center; margin-top: 3em;">
