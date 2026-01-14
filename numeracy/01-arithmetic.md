@@ -149,7 +149,7 @@ solution_text="Indices first: $5^2 = 25$. <br> Then Subtraction: $50 - 25 = 25$.
 
 {% include question_numerical.html
 id="bidmas_found_brackets"
-title="Basic Brackets"
+title="Brackets"
 question_text="Calculate: $(12 - 5) \times 4$"
 correct_answer="28"
 tolerance="0"
