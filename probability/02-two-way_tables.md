@@ -69,6 +69,7 @@ From the frequencies we can work out probabilities.
     </tr>
   </tbody>
 </table>
+{% endcapture %}
 
 {% include table_fill.html 
    id="contingency1" 
