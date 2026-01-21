@@ -53,13 +53,17 @@ $P(\text{late}) = P(\text{raining and late}) + P(\text{not raining and late}) = 
 
 ### Questions
 
-An archer is competing in a competition that requires two shots.  From experience they know that the probability that they will hit the *bullseye* is 0.8.  If they hit on the first attempt, the probability of hitting on the second attempt remains at 0.8.  However if they miss on the first attempt, the probability of missing on the second attempt drops to 0.52.
+An archer is competing in a competition that requires two shots.  From experience they know that the probability that they will hit the *bullseye* is 0.8.  If they hit on the first attempt, the probability of hitting on the second attempt remains at 0.8.  However if they miss on the first attempt, the probability of hitting on the second attempt drops to 0.52.
+
+{% capture q1_solution %}
+![A tree diagram showing branches for first attempt, hit or miss, followed by branches for the second attempt, hit or miss.]({{ "/assets/images/probability/tree_q1.png" | relative_url }})
+{% endcapture %}
 
 {% include question_dropdown.html
     id="tree_1"
     title="1"
     question_text="Create a tree diagram to show this information"
-    solution_text="![A tree diagram showing branches for first attempt, hit or miss, followed by branches for the second attempt, hit or miss.]({{ "/assets/images/probability/tree_q1.png" | relative_url }})
+    solution_text=q1_solution
 %}
 
 {% include question_numerical.html
@@ -81,12 +85,12 @@ An archer is competing in a competition that requires two shots.  From experienc
 %}
 
 {% include question_numerical.html
-    id="tree_2"
-    title="2"
+    id="tree_4"
+    title="4"
     question_text="What is the probability that they hit on exactly one attempt"
     correct_answer="0.304"
     tolerance="0"
-    solution_text="Hit then miss: $0.8 \times 0.8 = 0.2$ -- Miss then hit: $0.2 \times 0.52 = 0.104$ -- Add together: $0.304$"
+    solution_text="Hit then miss: $0.8 \times 0.2 = 0.16$ -- Miss then hit: $0.2 \times 0.52 = 0.104$ -- Add together: $0.264$"
 %}
 
 <div style="text-align: center; margin-top: 3em;">
