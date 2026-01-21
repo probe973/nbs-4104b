@@ -86,7 +86,7 @@ An archer is competing in a competition that requires two shots.  From experienc
     question_text="What is the probability that they hit on exactly one attempt"
     correct_answer="0.304"
     tolerance="0"
-    solution_text="Hit then miss: $0.8 \times 0.8 = 0.2$ <br> Miss then hit: $0.2 \times 0.52 = 0.104$ <br> Add together: $0.304$"
+    solution_text="Hit then miss: $0.8 \times 0.8 = 0.2$ -- Miss then hit: $0.2 \times 0.52 = 0.104$ -- Add together: $0.304$"
 %}
 
 <div style="text-align: center; margin-top: 3em;">
