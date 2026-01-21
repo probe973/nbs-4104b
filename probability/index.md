@@ -42,8 +42,8 @@ Here you will find links to questions on probability topics.
     <a href="{{ "/probability/04-formula.html" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Probability Formula</h3>
-                <p>The use of formula to solve more abstract probability problems.</p>
+                <h3>Probability Formula and Venn Diagrams</h3>
+                <p>The use of formula to solve more abstract probability problems, using Venn diagrams, and conditional probabilities.</p>
             </div>
         </div>
     </a>
