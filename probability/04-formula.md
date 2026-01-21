@@ -142,7 +142,7 @@ $$P(A) = 0.2, P(B) = 0.8, P(A | B) = 0.1$$
 
 {% include question_numerical.html
     id="vennformula_5"
-    title="4"
+    title="5"
     question_text="What is the probability of A or B $P(A \text{ OR } B) = P(A \cup B)$?"
     correct_answer="0.92"
     tolerance="0"
