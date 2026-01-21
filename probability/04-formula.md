@@ -152,7 +152,7 @@ $$P(A) = 0.2, P(B) = 0.8, P(A | B) = 0.1$$
 {% include question_numerical.html
     id="vennformula_6"
     title="6"
-    question_text="What is the value of $P(B | A)$?"
+    question_text="What is the value of $P(B \vert A)$?"
     correct_answer="0.4"
     tolerance="0"
     solution_text="Using $P(B | A) = \frac{P(B \cap A)}{P(A)}=\frac{0.08}{0.2}=0.4$"
