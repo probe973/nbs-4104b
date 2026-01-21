@@ -146,7 +146,7 @@ $$P(A) = 0.2, P(B) = 0.8, P(A | B) = 0.1$$
     question_text="What is the probability of A or B $P(A \text{ OR } B) = P(A \cup B)$?"
     correct_answer="0.92"
     tolerance="0"
-    solution_text="Using $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 0.2 + 0.8 - 0.08 = 0.92"
+    solution_text="Using $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 0.2 + 0.8 - 0.08 = 0.92$"
 %}
 
 {% include question_numerical.html
