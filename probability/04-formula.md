@@ -61,3 +61,105 @@ This formula says: $P(A \text{ not occurring}) = 1 - P(A \text{ occurring})$
 Note that this can be re-arranged to read $P(A) = 1 - P(\bar{A})$
 
 </div>
+
+### Questions
+
+Given:
+
+$$P(A) = 0.5, P(B) = 0.7, P(A \text{ OR } B) = 0.75$$
+
+{% include question_numerical.html
+    id="vennformula_1"
+    title="1"
+    question_text="What is the probability of both A and B $P(A \text{ AND } B)$?"
+    correct_answer="0.45"
+    tolerance="0"
+    solution_text="Using $P(A \text { OR } B) = P(A) + P(B) - P(A \text{ AND } B)$, gives $P(A \text{ AND } B) = 0.5+0.7-0.75=0.45$"
+%}
+
+{% capture q2_solution %}
+![A venn diagram with circles A and B with an overlap. Inside the circles are 0.05, 0.45, and 0.25.  Outside the circle is 0.25.]({{ "/assets/images/probability/venn_q1.png" | relative_url }})
+{% endcapture %}
+
+{% include question_dropdown.html
+    id="vennformula_2"
+    title="2"
+    question_text="Create a Venn diagram to show this information."
+    solution_text=q2_solution
+%}
+
+{% include question_numerical.html
+    id="vennformula_3"
+    title="3"
+    question_text="What is the probability of exactly one of A or B occurring, but not both?"
+    correct_answer="0.3"
+    tolerance="0"
+    solution_text="We want A and not B added to B and not A, so $0.05 + 0.25$."
+%}
+
+<div class="instructions" markdown="1">
+
+### $P(A | B)=\frac{P(A \cap B)}{P(B)}$
+
+**Conditional probability** is a probability when additional information is given.  The formula can be given as:
+
+$$P(A \text{ given } B \text{ has occurred })=\frac{P(A \text{ AND } B)}{P(B)}$$
+
+This can be rearranged to:
+
+$$P(A \text{ AND } B) = P(A \text{ given } B) \times P(B)$$
+
+**Example**
+
+Returning to the cat (C) and dog (D) example from above we had:
+
+$P(C) = 0.45$
+
+$P(D) = 0.3$
+
+$P(C \text{ AND } D) = 0.12$
+
+To work out the probability that a person who owns a dog, also owns a cat:
+
+$P(C \text{ given } D} = \frac{C \text{ AND } D}{P(D)} = \frac{0.12}{0.3} = 0.4$
+
+</div>
+
+### Questions
+
+Given:
+
+$$P(A) = 0.2, P(B) = 0.8, P(A | B) = 0.1$$
+
+{% include question_numerical.html
+    id="vennformula_4"
+    title="4"
+    question_text="What is the probability of both A and B $P(A \text{ AND } B) = P(A \cap B)$?"
+    correct_answer="0.08"
+    tolerance="0"
+    solution_text="Using $P(A \cap B) = P(A | B) \times P(B) = 0.1 \times 0.8 = 0.08"
+%}
+
+{% include question_numerical.html
+    id="vennformula_5"
+    title="4"
+    question_text="What is the probability of A or B $P(A \text{ OR } B) = P(A \cup B)$?"
+    correct_answer="0.92"
+    tolerance="0"
+    solution_text="Using $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 0.2 + 0.8 - 0.08 = 0.92"
+%}
+
+{% include question_numerical.html
+    id="vennformula_6"
+    title="6"
+    question_text="What is the value of P(B | A)?"
+    correct_answer="0.4"
+    tolerance="0"
+    solution_text="Using $P(B | A) = \frac{P(B \cap A)}{P(A)}=\frac{0.08}{0.2}=0.4"
+%}
+
+<div style="text-align: center; margin-top: 3em;">
+    <a href="{{ "/probability/" | relative_url }}">← Return to Probability Menu</a>
+</div>
+
+{% include pagination.html %}
