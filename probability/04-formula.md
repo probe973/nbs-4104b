@@ -137,7 +137,7 @@ $$P(A) = 0.2, P(B) = 0.8, P(A | B) = 0.1$$
     question_text="What is the probability of both A and B $P(A \text{ AND } B) = P(A \cap B)$?"
     correct_answer="0.08"
     tolerance="0"
-    solution_text="Using $P(A \cap B) = P(A | B) \times P(B) = 0.1 \times 0.8 = 0.08$"
+    solution_text="Using $P(A \cap B) = P(A \vert B) \times P(B) = 0.1 \times 0.8 = 0.08$"
 %}
 
 {% include question_numerical.html
@@ -155,7 +155,7 @@ $$P(A) = 0.2, P(B) = 0.8, P(A | B) = 0.1$$
     question_text="What is the value of $P(B \vert A)$?"
     correct_answer="0.4"
     tolerance="0"
-    solution_text="Using $P(B | A) = \frac{P(B \cap A)}{P(A)}=\frac{0.08}{0.2}=0.4$"
+    solution_text="Using $P(B \vert A) = \frac{P(B \cap A)}{P(A)}=\frac{0.08}{0.2}=0.4$"
 %}
 
 <div style="text-align: center; margin-top: 3em;">
