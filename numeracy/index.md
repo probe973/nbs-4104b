@@ -8,6 +8,17 @@ title: Numeracy Home
 
 Here you will find links to questions on numeracy topics.
 
+### In-person workshop information
+
+There will be an in-person workshop for the topic of numeracy.  There will be printouts of the **Numerical Problems** workshop, link below.  To access the other workshop materials you will need access to an internet enabled device.
+
+**Tuesday 27th January 2026**
+
+**1 pm to 1:50 pm**
+
+**Congregation Hall 01.19**
+
+
 </div>
 
 <div class="card-menu">
