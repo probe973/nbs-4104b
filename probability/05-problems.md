@@ -305,6 +305,8 @@ What is the probability that a randomly selected person:
 %}
 
 
+### Question 3
+
 At the bar of the company ‘The Pecs Bar & Gym’, customers can pay for items via different means.  30% of customers now use NFC on their smartphone to pay at the bar.  The company also has an app that gives news, information and offers to customers, 70% of customers have installed this app.  20% of customers use their smartphones to pay and have the company app.
 
 
@@ -387,6 +389,8 @@ If there are two events $A$ and $B$ and we find that $P(A \text{ given } B) = P(
     solution_text="Probability of NFC is 0.3 and the probability of NFC given they use the app is 0.286.  Not equal, so not independent."
 %}
 
+
+### Question 4
 
 A company records and finds that 82% of its members make use of the car park when they visit.  Of these 82%, 23% regularly use the café for refreshments during the visit.  For those who do not use the car park 64% obtain refreshments.
 
