@@ -62,3 +62,9 @@ $$11, 18, 22, 40, 21, 26, 35, 32, 25, 24, 22, 33, 52, 20, 23$$
     question_text="Display these data as a stem and leaf diagram."
     solution_text=stem_eg
 %}
+
+<div style="text-align: center; margin-top: 3em;">
+    <a href="{{ "/descriptive/" | relative_url }}">← Return to Descriptive Statistics Menu</a>
+</div>
+
+{% include pagination.html %}
