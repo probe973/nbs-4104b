@@ -81,13 +81,6 @@ $$P(A) = 0.5, P(B) = 0.7, P(A \text{ OR } B) = 0.75$$
 ![A venn diagram with circles A and B with an overlap. Inside the circles are 0.05, 0.45, and 0.25.  Outside the circle is 0.25.]({{ "/assets/images/probability/venn_q1.png" | relative_url }})
 {% endcapture %}
 
-{% include question_dropdown.html
-    id="vennformula_2"
-    title="2"
-    question_text="Create a Venn diagram to show this information."
-    solution_text=q2_solution
-%}
-
 {% include question_venn.html
     id="venn_q2"
     title="2"
