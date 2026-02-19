@@ -272,7 +272,7 @@ What is the probability that a randomly selected person:
     id="prob_prob_15"
     title="2b iii"
     question_text="has a medium interest and uses the Robot operating system?"
-    correct_answer="0.18
+    correct_answer="0.18"
     tolerance="0.0005"
     solution_text="$P(\text{Medium AND Robot})=\frac{90}{500}=\frac{9}{50}=0.18$"
 %}
