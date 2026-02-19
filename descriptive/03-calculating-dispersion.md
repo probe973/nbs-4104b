@@ -175,7 +175,7 @@ solution_text="The standard deviation is the square root of the variance."
 %}
 
 <div style="text-align: center; margin-top: 3em;">
-    <a href="{{ "/" | relative_url }}">← Return to Workshops Menu</a>
+    <a href="{{ "/descriptive/" | relative_url }}">← Return to Descriptive Statistics Menu</a>
 </div>
 
 {% include pagination.html %}
