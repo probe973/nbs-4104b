@@ -88,6 +88,22 @@ $$P(A) = 0.5, P(B) = 0.7, P(A \text{ OR } B) = 0.75$$
     solution_text=q2_solution
 %}
 
+{% include question_venn.html
+    id="venn_q2"
+    title="2"
+    question_text="Complete the Venn diagram, showing probabilities as decimal numbers between 0 and 1."
+    label_a="A"
+    label_b="B"
+    val_a="INPUT"
+    val_mid="INPUT"
+    val_b="INPUT"
+    val_out="INPUT"
+    answers="0.05 || 0.45 || 0.25 || 0.25"
+    tolerance="0.01"
+    solution_text="Fill in the intersection of 0.45 first.  The work out the remainder of A ($0.5 - 0.45 = 0.05$) and the remainder of B ($0.7 - 0.45 = 0.25$).  All 4 numbers need to sum to 1."
+%}
+
+
 {% include question_numerical.html
     id="vennformula_3"
     title="3"
