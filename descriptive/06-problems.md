@@ -230,7 +230,7 @@ For the non-executive employees, you are given the following summary statistics:
     id="ds_q2a"
     title="2a"
     question_text="Draw side-by-side box and whisker plots for the executive and non-executive wages."
-    solution_text="<strong>Executive:</strong> Min 48, Q1 60, Med 75, Q3 90, Max 107. <br> <strong>Non-Executive:</strong> Min 24, Q1 32, Med 36, Q3 48, Max 74. <br><br> ![Box plot showing Executive wage shifted significantly higher and wider than Non-Executive wage](/assets/images/placeholder_boxplot.png)"
+    solution_text="<strong>Executive:</strong> Min 48, Q1 60, Med 75, Q3 90, Max 107. <br> <strong>Non-Executive:</strong> Min 24, Q1 32, Med 36, Q3 48, Max 74. <br><br> ![Box plot showing Executive wage shifted significantly higher and wider than Non-Executive wage](/assets/images/descriptive/boxplot_problems_2a.png)"
 %}
 
 <!-- 2b -->
