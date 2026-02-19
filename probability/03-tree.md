@@ -59,13 +59,6 @@ An archer is competing in a competition that requires two shots.  From experienc
 ![A tree diagram showing branches for first attempt, hit or miss, followed by branches for the second attempt, hit or miss.]({{ "/assets/images/probability/tree_q1.png" | relative_url }})
 {% endcapture %}
 
-{% include question_dropdown.html
-    id="tree_1"
-    title="1"
-    question_text="Create a tree diagram to show this information"
-    solution_text=q1_solution
-%}
-
 {% include question_tree.html
     id="tree_q1"
     title="1"
