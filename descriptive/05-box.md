@@ -31,7 +31,7 @@ It is particularly useful for:
 
 Here is a dataset summarised by a box and whisker plot.
 
-![Vertical box plot, with ](../assets/images/descriptive/box_plot_q.png)
+![Vertical box plot, with a scale of 20 to 45 on the vertical axis.  The whiskers run between 21 and 44.  The box runs between 25 and 36.  The line in the box is at 30. ](../assets/images/descriptive/box_plot_q.png)
 
 {% include question_multiple_choice.html
     id="box_plot_q1"
