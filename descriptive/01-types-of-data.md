@@ -109,5 +109,8 @@ For the following variables, how would you classify them?
     solution_text="This is a numerical quantity but can only take fixed values (5, 5.5, 6, ...).  This is discrete data."
 %}
 
-<!-- This automatically adds the "Previous" and "Next" navigation buttons -->
+<div style="text-align: center; margin-top: 3em;">
+    <a href="{{ "/descriptive/" | relative_url }}">← Return to Descriptive Statistics Menu</a>
+</div>
+
 {% include pagination.html %}
