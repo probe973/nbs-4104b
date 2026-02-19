@@ -66,6 +66,31 @@ An archer is competing in a competition that requires two shots.  From experienc
     solution_text=q1_solution
 %}
 
+{% include question_tree.html
+    id="tree_q1"
+    title="1"
+    question_text="Fill in the missing probabilities as decimals between 0 and 1."
+    
+    text_a_top="Hit"        
+    text_a_bot="Miss"
+    
+    text_b_1="Hit"
+    text_b_2="Miss"
+    text_b_3="Hit"
+    text_b_4="Miss"
+
+    val_a_top="0.8"
+    val_a_bot="INPUT"
+
+    val_b_1="INPUT"
+    val_b_2="INPUT"
+    val_b_3="INPUT"
+    val_b_4="INPUT"
+
+    answers="0.2 || 0.8 || 0.2 || 0.52 || 0.48"
+    solution_text="No Car: $1 - 0.8$.  For the hit branch we will still have $0.8$ for hit and $1 - 0.2$ for miss. For the no car branch we will hit with $0.52$, so miss $1-0.52$."
+%}
+
 {% include question_numerical.html
     id="tree_2"
     title="2"
