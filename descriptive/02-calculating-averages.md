@@ -56,4 +56,8 @@ tolerance="0"
 solution_text="The number 8 appears most often."
 %}
 
+<div style="text-align: center; margin-top: 3em;">
+    <a href="{{ "/descriptive/" | relative_url }}">← Return to Descriptive Statistics Menu</a>
+</div>
+
 {% include pagination.html %}
