@@ -151,8 +151,8 @@ Opposite of a **cube** e.g. $x^3$ is a **cube root**, $\sqrt[3]{}$, or you can u
 {% include question_dropdown.html
     id="alg_re_8"
     title="8"
-    question_text="Make $t$ the subject of: $mt-p=pt^3-1$"
-    solution_text="Add 1 to both sides <br> $mt-p+1=pt^3$ <br> Divide both sides by p <br> $\frac{mt-p+1}{p}=t^3$ <br> Cube root both sides <br> $\sqrt[3]{\frac{mt-p+1}{p}}=t$ <br> **Answer:** $t=\sqrt[3]{\frac{mt-p+1}{p}}$"
+    question_text="Make $t$ the subject of: $ms-p=pt^3-1$"
+    solution_text="Add 1 to both sides <br> $ms-p+1=pt^3$ <br> Divide both sides by p <br> $\frac{ms-p+1}{p}=t^3$ <br> Cube root both sides <br> $\sqrt[3]{\frac{ms-p+1}{p}}=t$ <br> **Answer:** $t=\sqrt[3]{\frac{ms-p+1}{p}}$"
 %}
 
 {% include question_dropdown.html
