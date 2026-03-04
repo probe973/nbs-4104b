@@ -348,7 +348,7 @@ There are **22** people in the company that are permitted to use a company car.
 
 ### Question 4
 
-The mean yearly distance travelled in a company car is 14,000 km and the variance is 4,410,000 km². All employees agree to reduce their annual mileage by 2,000 km.
+The mean yearly distance traveled in a company car is 14,000 km and the variance is 4,410,000 km². All employees agree to reduce their annual mileage by 2,000 km.
 
 </div>
 
