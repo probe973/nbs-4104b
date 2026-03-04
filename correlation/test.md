@@ -10,4 +10,4 @@ title: Test
    instruction="Plot the relationship between Time and Speed from the observations below."
    varX="Time (s)"
    varY="Speed (m/s)"
-   points="2,4 | 4,8 | 5,10" %}
+   points="2,4 | 4,8 | 5,10 | 15,15 " %}
