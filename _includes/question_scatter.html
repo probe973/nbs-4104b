@@ -1,71 +1,109 @@
-<div class="quiz-block" style="border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px;">
-  <p><strong>Question:</strong> {{ include.text }}</p>
+<div class="quiz-container" style="border: 2px solid #333; padding: 20px; margin: 20px 0; border-radius: 10px; font-family: sans-serif;">
+  <p><strong>Task:</strong> {{ include.instruction }}</p>
 
-  <!-- The Visual Grid (with an ARIA label so screen readers know what it is) -->
-  <div id="box-{{ include.id }}" class="jxgbox" style="width:300px; height:300px;" role="application" aria-label="Interactive coordinate grid"></div>
+  <!-- THE TASK TABLE: This shows the coordinates the student must plot -->
+  <table border="1" style="border-collapse: collapse; margin-bottom: 20px; text-align: center; width: 200px;" aria-label="Coordinates to plot">
+    <thead>
+      <tr style="background: #eee;"><th>Point</th><th>X</th><th>Y</th></tr>
+    </thead>
+    <tbody id="task-table-{{ include.id }}">
+      <!-- JavaScript will fill this in based on your Markdown -->
+    </tbody>
+  </table>
 
-  <!-- The Accessible Entry (Text boxes for students who don't use a mouse) -->
-  <div style="margin-top: 15px;">
-    <label for="x-{{ include.id }}">X Coordinate:</label>
-    <input type="number" id="x-{{ include.id }}" value="0" style="width: 60px;">
-    
-    <label for="y-{{ include.id }}" style="margin-left: 10px;">Y Coordinate:</label>
-    <input type="number" id="y-{{ include.id }}" value="0" style="width: 60px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+    <!-- THE VISUAL GRID -->
+    <div id="grid-{{ include.id }}" class="jxgbox" style="width:350px; height:350px;" role="application" aria-label="Coordinate grid"></div>
+
+    <!-- THE ACCESSIBLE INPUT TABLE: For keyboard/screen-reader users -->
+    <div>
+      <p><strong>Your Plotting Data:</strong></p>
+      <table border="1" style="border-collapse: collapse; text-align: center;">
+        <thead>
+          <tr style="background: #eee;"><th>Point</th><th>X Value</th><th>Y Value</th></tr>
+        </thead>
+        <tbody id="input-table-{{ include.id }}">
+          <!-- JavaScript will create input rows here -->
+        </tbody>
+      </table>
+    </div>
   </div>
 
-  <button id="check-{{ include.id }}" style="margin-top: 15px; padding: 5px 15px;">Check Answer</button>
-  
-  <!-- This "aria-live" tag makes sure screen readers announce the result immediately -->
-  <p id="feedback-{{ include.id }}" aria-live="polite" style="margin-top: 10px; font-weight: bold;"></p>
+  <button id="btn-{{ include.id }}" style="margin-top: 20px; padding: 10px 25px; font-size: 1rem; cursor: pointer;">Check My Plot</button>
+  <p id="msg-{{ include.id }}" aria-live="polite" style="margin-top: 15px; font-weight: bold; font-size: 1.1rem;"></p>
 </div>
 
 <script>
 (function() {
-  // 1. Setup the graph
-  var board = JXG.JSXGraph.initBoard('box-{{ include.id }}', {
-    boundingbox: [-1, 11, 11, -1], // Shows 0 to 10
-    axis: true,
+  // 1. Get the data from your Markdown (format: "1,2|3,4|5,6")
+  const pointData = "{{ include.points }}".split('|').map(p => p.split(',').map(Number));
+  const id = "{{ include.id }}";
+  
+  // 2. Build the "Task Table" so the student knows what to do
+  const taskBody = document.getElementById('task-table-' + id);
+  pointData.forEach((pt, i) => {
+    taskBody.innerHTML += `<tr><td>${String.fromCharCode(65 + i)}</td><td>${pt[0]}</td><td>${pt[1]}</td></tr>`;
+  });
+
+  // 3. Setup the Grid
+  const board = JXG.JSXGraph.initBoard('grid-' + id, {
+    boundingbox: [-1, 11, 11, -1], 
+    axis: true, 
     showCopyright: false
   });
 
-  // 2. Create the point that moves
-  var point = board.create('point', [0, 0], {
-    name: 'P',
-    snapToGrid: true,
-    snapSizeX: 1,
-    snapSizeY: 1
+  const userPoints = [];
+  const inputTableBody = document.getElementById('input-table-' + id);
+
+  // 4. Create a draggable point and an input row for EACH coordinate
+  pointData.forEach((target, i) => {
+    const label = String.fromCharCode(65 + i);
+    
+    // Create the visual point (starting at 0,0)
+    const p = board.create('point', [0, 0], { name: label, snapToGrid: true, snapSizeX: 1, snapSizeY: 1 });
+    userPoints.push(p);
+
+    // Create the table row with number inputs
+    const row = document.createElement('tr');
+    row.innerHTML = `
+      <td>${label}</td>
+      <td><input type="number" id="x-${id}-${i}" value="0" style="width:50px;" aria-label="Point ${label} X coordinate"></td>
+      <td><input type="number" id="y-${id}-${i}" value="0" style="width:50px;" aria-label="Point ${label} Y coordinate"></td>
+    `;
+    inputTableBody.appendChild(row);
+
+    const inX = document.getElementById(`x-${id}-${i}`);
+    const inY = document.getElementById(`y-${id}-${i}`);
+
+    // Sync: Dragging point updates inputs
+    p.on('drag', () => {
+      inX.value = p.X();
+      inY.value = p.Y();
+    });
+
+    // Sync: Typing updates point
+    [inX, inY].forEach(el => el.addEventListener('input', () => {
+      p.setPosition(JXG.COORDS_BY_USER, [parseFloat(inX.value) || 0, parseFloat(inY.value) || 0]);
+      board.update();
+    }));
   });
 
-  // Links for the input boxes
-  var inX = document.getElementById('x-{{ include.id }}');
-  var inY = document.getElementById('y-{{ include.id }}');
-  var feedback = document.getElementById('feedback-{{ include.id }}');
+  // 5. Check Answer Logic
+  document.getElementById('btn-' + id).onclick = function() {
+    let allCorrect = true;
+    userPoints.forEach((p, i) => {
+      if (p.X() !== pointData[i][0] || p.Y() !== pointData[i][1]) {
+        allCorrect = false;
+      }
+    });
 
-  // 3. Sync: Moving point updates text boxes
-  point.on('drag', function() {
-    inX.value = point.X();
-    inY.value = point.Y();
-  });
-
-  // 4. Sync: Typing in boxes moves the point
-  function updatePoint() {
-    point.setPosition(JXG.COORDS_BY_USER, [parseFloat(inX.value), parseFloat(inY.value)]);
-    board.update();
-  }
-  inX.addEventListener('input', updatePoint);
-  inY.addEventListener('input', updatePoint);
-
-  // 5. Grading logic
-  document.getElementById('check-{{ include.id }}').onclick = function() {
-    var correctX = {{ include.ansX }};
-    var correctY = {{ include.ansY }};
-
-    if (point.X() === correctX && point.Y() === correctY) {
-      feedback.innerHTML = "✅ Correct!";
-      feedback.style.color = "green";
+    const msg = document.getElementById('msg-' + id);
+    if (allCorrect) {
+      msg.innerText = "✅ Excellent! Every point is correctly plotted.";
+      msg.style.color = "green";
     } else {
-      feedback.innerHTML = "❌ Try again. You are at (" + point.X() + ", " + point.Y() + ")";
-      feedback.style.color = "red";
+      msg.innerText = "❌ Not quite. Compare your table with the task table and try moving the points.";
+      msg.style.color = "red";
     }
   };
 })();
