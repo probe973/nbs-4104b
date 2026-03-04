@@ -307,41 +307,38 @@ There are **22** people in the company that are permitted to use a company car.
 {% include question_numerical.html
     id="ds_q3a"
     title="3a"
-    question_text="How many non-executive employees are not permitted to use a company car? (A two-way table may be useful here)."
+    question_text="How many non-executive employees are not permitted to use a company car?"
     correct_answer="58"
     tolerance="0"
     solution_text="Read from table"
 %}
 
 <!-- 3b -->
-<div class="instructions" markdown="1">
-**3b.** What percentage are licensed to use the car? (Give answers to 1 decimal place).
-</div>
 
 {% include question_numerical.html
     id="ds_q3b_1"
     title="3b i"
-    question_text="Of all employees"
+    question_text="What percentage of all employees are licensed to use the car? (1 d.p.)"
     correct_answer="26.8"
-    tolerance="0.1"
+    tolerance="0.05"
     solution_text="$22 \div 82 \times 100 = 26.8\%$."
 %}
 
 {% include question_numerical.html
     id="ds_q3b_2"
     title="3b ii"
-    question_text="Of executive employees"
+    question_text="What percentage of executive employees are licensed to use the car? (1 d.p.)"
     correct_answer="83.3"
-    tolerance="0.1"
+    tolerance="0.05"
     solution_text="$10 \div 12 \times 100 = 83.3\%$."
 %}
 
 {% include question_numerical.html
     id="ds_q3b_3"
     title="3b iii"
-    question_text="Of non-executive employees"
+    question_text="What percentage of non-executive employees are licensed to use the car? (1 d.p.)"
     correct_answer="17.1"
-    tolerance="0.1"
+    tolerance="0.05"
     solution_text="$12 \div 70 \times 100 = 17.1\%$."
 %}
 
