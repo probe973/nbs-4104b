@@ -1,148 +1,158 @@
-{% assign button_class = "btn" %}
-{% assign labelX = include.varX | default: "X" %}
-{% assign labelY = include.varY | default: "Y" %}
+{% comment %} 
+  Change "btn" to "button" below if your website's buttons don't look right.
+{% endcomment %}
+{% assign button_style = "btn" %}
+{% assign x_name = include.varX | default: "X" %}
+{% assign y_name = include.varY | default: "Y" %}
 
-<div class="quiz-container" style="border: 2px solid #ccc; padding: 25px; margin: 20px 0; border-radius: 10px; background-color: #ffffff; color: #333;">
+<div class="quiz-block" style="border: 2px solid #333; padding: 25px; margin: 30px 0; border-radius: 12px; background: #fff; font-family: sans-serif;">
+  
   <h3 style="margin-top: 0;">{{ include.title }}</h3>
-  <p>{{ include.instruction }}</p>
+  <p><strong>Instruction:</strong> {{ include.instruction }}</p>
 
-  <table style="width: 250px; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #999;">
+  <!-- THE QUESTION DATA -->
+  <table style="width: 260px; border-collapse: collapse; margin-bottom: 25px;" border="1">
     <thead>
-      <tr style="background: #f4f4f4;">
-        <th style="border:1px solid #999;">Point</th>
-        <th style="border:1px solid #999;">{{ labelX }}</th>
-        <th style="border:1px solid #999;">{{ labelY }}</th>
+      <tr style="background: #333; color: white;">
+        <th style="padding: 8px;">Target Point</th>
+        <th>{{ x_name }}</th>
+        <th>{{ y_name }}</th>
       </tr>
     </thead>
     <tbody id="task-{{ include.id }}" style="text-align: center;"></tbody>
   </table>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
     
-    <div>
-      <div id="grid-{{ include.id }}" class="jxgbox" style="width:350px; height:350px; border: 1px solid #999;" role="application" aria-label="Coordinate grid"></div>
-      <p><small>Click empty space to add a point. Drag to move.</small></p>
+    <!-- THE VISUAL GRID (For Mouse Users) -->
+    <div style="flex: 1; min-width: 320px;">
+      <div id="grid-{{ include.id }}" class="jxgbox" style="width:350px; height:350px; border: 1px solid #999;" role="img" aria-label="Coordinate grid"></div>
+      <p style="color: #666; font-size: 0.9em;"><em>Mouse Users: Click empty space to add a point. Drag dots to move them.</em></p>
     </div>
 
+    <!-- THE ACCESSIBILITY SECTION (For Keyboard/Blind Users) -->
     <div style="flex: 1; min-width: 300px;">
-      <div style="padding: 15px; background: #eef7ff; border: 1px solid #0056b3; border-radius: 8px; margin-bottom: 15px;">
-        <p style="margin-top:0;"><strong>Add Point:</strong></p>
-        <label for="manX-{{ include.id }}">{{ labelX }}:</label>
-        <input type="number" id="manX-{{ include.id }}" style="width:60px;">
-        <label for="manY-{{ include.id }}" style="margin-left:10px;">{{ labelY }}:</label>
-        <input type="number" id="manY-{{ include.id }}" style="width:60px;">
-        <button id="addBtn-{{ include.id }}" class="{{ button_class }}" style="margin-left:10px;">Add</button>
+      
+      <div style="padding: 15px; background: #f0f7ff; border: 1px solid #0056b3; border-radius: 8px; margin-bottom: 20px;">
+        <h4 style="margin-top: 0; color: #0056b3;">For Keyboard Users:</h4>
+        <p style="font-size: 0.9em; margin-bottom: 10px;">Type the coordinates below and click "Add Point to Grid".</p>
+        
+        <label for="inputX-{{ include.id }}">{{ x_name }}:</label>
+        <input type="number" id="inputX-{{ include.id }}" style="width: 60px; padding: 5px;">
+        
+        <label for="inputY-{{ include.id }}" style="margin-left: 10px;">{{ y_name }}:</label>
+        <input type="number" id="inputY-{{ include.id }}" style="width: 60px; padding: 5px;">
+        
+        <button id="addBtn-{{ include.id }}" class="{{ button_style }}" style="margin-left: 10px; padding: 5px 10px;">Add Point to Grid</button>
       </div>
 
-      <strong>Your Plots:</strong>
-      <table style="width: 100%; border-collapse: collapse; margin-top: 5px; border: 1px solid #999;">
+      <h4 style="margin-top: 0;">Your Progress Table:</h4>
+      <table style="width: 100%; border-collapse: collapse; background: white;" border="1">
         <thead>
-          <tr style="background: #f4f4f4;">
-            <th style="border:1px solid #999;">Point</th>
-            <th style="border:1px solid #999;">{{ labelX }}</th>
-            <th style="border:1px solid #999;">{{ labelY }}</th>
-            <th style="border:1px solid #999;">Del</th>
+          <tr style="background: #eee;">
+            <th style="padding: 5px;">Label</th>
+            <th>{{ x_name }}</th>
+            <th>{{ y_name }}</th>
+            <th>Action</th>
           </tr>
         </thead>
-        <tbody id="user-{{ include.id }}" style="text-align: center;"></tbody>
+        <tbody id="user-{{ include.id }}" style="text-align: center;">
+          <!-- Points will appear here as they are added -->
+        </tbody>
       </table>
 
-      <button id="check-{{ include.id }}" class="{{ button_class }}" style="margin-top: 25px; width: 100%; padding: 10px;">Check Answers</button>
-      <p id="msg-{{ include.id }}" aria-live="polite" style="margin-top: 15px; font-weight: bold;"></p>
+      <button id="check-{{ include.id }}" class="{{ button_style }}" style="width: 100%; margin-top: 30px; padding: 12px; font-weight: bold;">Check My Answers</button>
+      <p id="msg-{{ include.id }}" aria-live="polite" style="margin-top: 15px; font-weight: bold; font-size: 1.1em;"></p>
     </div>
+
   </div>
 </div>
 
 <script>
 (function() {
   const id = "{{ include.id }}";
-  const targets = "{{ include.points }}".split('|').map(p => p.split(',').map(n => parseFloat(n.trim())));
+  const pointsData = "{{ include.points }}".split('|').map(p => p.split(',').map(n => parseFloat(n.trim())));
   
-  // --- AUTO-SCALING LOGIC ---
-  let maxX = Math.max(...targets.map(p => p[0]));
-  let maxY = Math.max(...targets.map(p => p[1]));
-  // Round up to nearest nice number and add padding
-  let gridMaxX = Math.ceil(maxX * 1.2) || 10;
-  let gridMaxY = Math.ceil(maxY * 1.2) || 10;
-  // Determine snap size (if range is large, don't snap to 1)
-  let snapSize = gridMaxX > 50 ? 5 : 1;
+  // 1. Auto-Scaling logic
+  const maxX = Math.max(...pointsData.map(p => p[0]));
+  const maxY = Math.max(...pointsData.map(p => p[1]));
+  const gridMaxX = Math.ceil(maxX * 1.25) || 10;
+  const gridMaxY = Math.ceil(maxY * 1.25) || 10;
 
+  // 2. Build the Grid (Hidden nav bar, auto-scaled)
   const board = JXG.JSXGraph.initBoard('grid-'+id, {
-    boundingbox: [-gridMaxX*0.15, gridMaxY*1.15, gridMaxX*1.15, -gridMaxY*0.15], 
-    axis: true, 
-    showCopyright: false,
-    showNavigation: false, // This removes the symbols below the axis
-    pan: {enabled: false}, 
-    zoom: {enabled: false},
+    boundingbox: [-gridMaxX*0.2, gridMaxY*1.2, gridMaxX*1.2, -gridMaxY*0.2], 
+    axis: true, showCopyright: false, showNavigation: false,
     defaultAxes: {
-      x: { name: '{{ labelX }}', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
-      y: { name: '{{ labelY }}', withLabel: true, label: { position: 'rt', offset: [-25, -10] } }
+      x: { name: '{{ x_name }}', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: '{{ y_name }}', withLabel: true, label: { position: 'rt', offset: [-25, -10] } }
     }
   });
-  
+
+  // 3. Fill the Task Table
   const taskBody = document.getElementById('task-'+id);
-  targets.forEach((p, i) => {
-    taskBody.innerHTML += `<tr><td style="border:1px solid #999;">${i+1}</td><td style="border:1px solid #999;">${p[0]}</td><td style="border:1px solid #999;">${p[1]}</td></tr>`;
+  pointsData.forEach((p, i) => {
+    taskBody.innerHTML += `<tr><td style="padding:8px;">Point ${i+1}</td><td>${p[0]}</td><td>${p[1]}</td></tr>`;
   });
 
   let userPoints = [];
   const userTable = document.getElementById('user-'+id);
 
-  function refresh() {
+  function updateDisplay() {
     userTable.innerHTML = "";
     userPoints.forEach((p, i) => {
       p.setAttribute({name: (i+1).toString()});
-      userTable.innerHTML += `<tr><td style="border:1px solid #999;">${i+1}</td><td style="border:1px solid #999;">${p.X()}</td><td style="border:1px solid #999;">${p.Y()}</td><td style="border:1px solid #999;"><button onclick="window.delPt${id}(${i})">X</button></td></tr>`;
+      userTable.innerHTML += `<tr><td style="padding:5px;">${i+1}</td><td>${p.X()}</td><td>${p.Y()}</td><td><button onclick="window.removePt${id}(${i})">Remove</button></td></tr>`;
     });
   }
 
-  function addPt(x, y) {
-    if (userPoints.length >= targets.length) return;
-    const p = board.create('point', [x, y], {
-        name: (userPoints.length + 1).toString(), 
-        snapToGrid: true, 
-        snapSizeX: snapSize, 
-        snapSizeY: snapSize
-    });
-    p.on('drag', refresh);
+  function addPoint(x, y) {
+    if (userPoints.length >= pointsData.length) {
+      document.getElementById('msg-'+id).innerText = "All points are already placed. Move them or remove one to change.";
+      return;
+    }
+    const p = board.create('point', [x, y], {name: (userPoints.length + 1).toString(), snapToGrid: true, snapSizeX: 1, snapSizeY: 1});
+    p.on('drag', updateDisplay);
     userPoints.push(p);
-    refresh();
+    updateDisplay();
   }
 
+  // Interaction: Mouse
   board.on('down', function(e) {
     const coords = board.getUsrCoordsOfMouse(e);
-    const objUnderMouse = board.getAllObjectsUnderMouse(e);
-    if (!objUnderMouse.find(obj => obj.elType === 'point')) {
-      addPt(Math.round(coords[0]), Math.round(coords[1]));
-    }
+    const hasPoint = board.getAllObjectsUnderMouse(e).find(obj => obj.elType === 'point');
+    if (!hasPoint) addPoint(Math.round(coords[0]), Math.round(coords[1]));
   });
 
+  // Interaction: Keyboard
   document.getElementById('addBtn-'+id).onclick = () => {
-    const x = parseFloat(document.getElementById('manX-'+id).value);
-    const y = parseFloat(document.getElementById('manY-'+id).value);
-    if (!isNaN(x) && !isNaN(y)) addPt(x, y);
+    const x = parseFloat(document.getElementById('inputX-'+id).value);
+    const y = parseFloat(document.getElementById('inputY-'+id).value);
+    if (!isNaN(x) && !isNaN(y)) addPoint(x, y);
   };
 
-  window["delPt" + id] = (index) => {
+  // Interaction: Remove
+  window["removePt" + id] = (index) => {
     board.removeObject(userPoints[index]);
     userPoints.splice(index, 1);
-    refresh();
+    updateDisplay();
   };
 
+  // Check Answer logic
   document.getElementById('check-'+id).onclick = () => {
     const msg = document.getElementById('msg-'+id);
-    if (userPoints.length < targets.length) {
-      msg.innerText = "Please plot all " + targets.length + " points.";
+    if (userPoints.length < pointsData.length) {
+      msg.innerText = "Please plot all " + pointsData.length + " points before checking.";
       return;
     }
     let score = 0;
-    let tempTargets = [...targets];
+    let pool = [...pointsData];
     userPoints.forEach(up => {
-      const idx = tempTargets.findIndex(tp => tp[0] === up.X() && tp[1] === up.Y());
-      if (idx > -1) { score++; tempTargets.splice(idx, 1); }
+      const match = pool.findIndex(tp => tp[0] === up.X() && tp[1] === up.Y());
+      if (match > -1) { score++; pool.splice(match, 1); }
     });
-    msg.innerText = (score === targets.length) ? "✅ Correct!" : "❌ You have " + score + " out of " + targets.length + " correct.";
-    msg.style.color = (score === targets.length) ? "green" : "red";
+    msg.innerText = (score === pointsData.length) ? "✅ Correct! All points are scribed perfectly." : "❌ Try again. You have " + score + " correctly placed.";
+    msg.style.color = (score === pointsData.length) ? "green" : "red";
   };
 })();
 </script>
