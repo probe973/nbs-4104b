@@ -7,6 +7,15 @@ title: Descriptive Statistics
 
 <div class="instructions" markdown="1">
 
+You can download a pdf of this resource <a href="{{ "/assets/pdf/descriptive_statistics.pdf" | relative_url }}" target="_blank">here</a>.
+
+The solutions pdf can be found <a href="{{ "/assets/pdf/descriptive_statistics_solutions.pdf" | relative_url }}" target="_blank">here</a>.  
+
+Please be mindful of the environment when choosing whether you need to print.
+</div>
+
+<div class="instructions" markdown="1">
+
 ### Question 1
 
 A small company employs 82 people. People working at the company are either in executive or non-executive positions. The annual salaries, given to the nearest £1000, of those in executive positions are shown below:
