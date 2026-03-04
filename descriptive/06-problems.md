@@ -87,7 +87,7 @@ A small company employs 82 people. People working at the company are either in e
 
 <div class="instructions" markdown="1">
 
-10 of these executives are permitted to use a company car. **The arithmetic mean of their 10 wages is £79500**. Find the sample variance, $s_{w}^{2}$, of their wages.
+10 of these executives are permitted to use a company car. **The arithmetic mean of their 10 wages is £79500**, wages shown in table below. Find the sample variance, $s_{w}^{2}$, of their wages.
 
 $$ s_{x}^{2} = \frac{\sum (x - \bar{x})^2}{n - 1} $$
 
@@ -187,25 +187,31 @@ $$ s_{x}^{2} = \frac{\sum (x - \bar{x})^2}{n - 1} $$
 **1e.** What level of data is being measured for the following? Answer nominal, ordinal, interval, or ratio.
 </div>
 
-{% include question_dropdown.html
+{% include question_multiple_choice.html
     id="ds_q1e_1"
     title="1e i"
     question_text="Type of employment (exec or non-exec)"
-    solution_text="**Nominal**"
+    options="nom::Nominal||ord::Ordinal||int::Interval||rat::Ratio"
+    correct_answer="nom"
+    solution_text="Categorical data, nominal."
 %}
 
-{% include question_dropdown.html
+{% include question_multiple_choice.html
     id="ds_q1e_2"
     title="1e ii"
     question_text="Permission to use company car (yes or no)"
-    solution_text="**Nominal**"
+    options="nom::Nominal||ord::Ordinal||int::Interval||rat::Ratio"
+    correct_answer="nom"
+    solution_text="Categorical data, nominal."
 %}
 
-{% include question_dropdown.html
+{% include question_multiple_choice.html
     id="ds_q1e_3"
     title="1e iii"
-    question_text="Annual Wage"
-    solution_text="**Ratio**"
+    question_text="Annual wage"
+    options="nom::Nominal||ord::Ordinal||int::Interval||rat::Ratio"
+    correct_answer="rat"
+    solution_text="Measured data with true 0, ratio."
 %}
 
 <br><br>
@@ -253,6 +259,50 @@ There are **22** people in the company that are permitted to use a company car.
 
 </div>
 
+
+{% capture contingency_ds_car %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+    <th scope="col">Level/Company Car</th>
+    <th scope="col">Use company car</th>
+    <th scope="col">Not use company car</th>
+    <th scope="col">TOTAL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Executive</td>
+      <td><input type="number" step="any" aria-label="Frequency of executive and company car"></td>
+      <td><input type="number" step="any" aria-label="Frequency of executive and no company car"></td>
+      <td><input type="number" step="any" aria-label="Total frequency of executives"></td>
+    </tr>
+    <tr>
+     <td>Non-Executive</td>
+      <td><input type="number" step="any" aria-label="Frequency of non-executive and company car"></td>
+      <td><input type="number" step="any" aria-label="Frequency of non- executive and no company car"></td>
+      <td><input type="number" step="any" aria-label="Total frequency of non-executives"></td>
+    </tr>
+    <tr>
+      <td>TOTAL</td>
+     <td><input type="number" step="any" aria-label="Total frequency of company car"></td>
+      <td><input type="number" step="any" aria-label="Total frequency of no company car"></td>
+      <td><input type="number" step="any" aria-label="Total frequency"></td>
+    </tr>
+  </tbody>
+</table>
+{% endcapture %}
+
+{% include table_fill.html 
+   id="ds_q3table" 
+   title="3"
+   question_text="Use the information given in the questions so far to complete the two-way frequency table"
+   table_content=contingency_ds_car
+   answers="10 || 2 || 12 || 12 || 58 || 70 || 22 || 60 || 82"
+   tolerance="0.01" 
+   solution_text="Total employees: 82. Executives: 12. Non-execs: 70. <br> Total cars: 22. Exec cars (from Q1d): 10. <br> Non-execs with cars: $22 - 10 = 12$. <br> Non-execs without cars: $70 - 12 = 58$."
+%}
+
 <!-- 3a -->
 {% include question_numerical.html
     id="ds_q3a"
@@ -260,7 +310,7 @@ There are **22** people in the company that are permitted to use a company car.
     question_text="How many non-executive employees are not permitted to use a company car? (A two-way table may be useful here)."
     correct_answer="58"
     tolerance="0"
-    solution_text="Total employees: 82. Executives: 12. Non-execs: 70. <br> Total cars: 22. Exec cars (from Q1d): 10. <br> Non-execs with cars: $22 - 10 = 12$. <br> Non-execs without cars: $70 - 12 = 58$."
+    solution_text="Read from table"
 %}
 
 <!-- 3b -->
