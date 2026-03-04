@@ -27,7 +27,7 @@ A ticket is drawn, the winner picks their prize, the winning ticket is returned 
 
 **Part a**
 
-In a weekly draw, what is the probability that **you** will win the first prize if **you are** (**Give answers as decimals between 0 and 1**, and if required, give answers to 3 decimal places):
+In a weekly draw, what is the probability that **you** will win the first prize if **you are**... (Give answers as decimals between 0 and 1, and if required, give answers to 3 decimal places):
 
 {% include question_numerical.html
     id="prob_prob_1"
@@ -50,7 +50,7 @@ In a weekly draw, what is the probability that **you** will win the first prize 
 
 **Part b**
 
-A particular employee has been working there for 8 years.  What is the probability that in a weekly draw that: (**Give answers as decimals between 0 and 1**, and if required, give answers to 3 decimal places)
+A particular employee has been working there for 8 years.  What is the probability that in a weekly draw that: (Give answers as decimals between 0 and 1, and if required, give answers to 3 decimal places)
 
 {% include question_numerical.html
     id="prob_prob_3"
@@ -81,7 +81,7 @@ A particular employee has been working there for 8 years.  What is the probabili
 
 **Part c**
 
-The company decides to change the nature of the draw, and the first prize winning ticket is no longer returned to the draw.  Work out the probability, for the individuals given, of winning. (**Give answers as decimals between 0 and 1**, and if required, give answers to 3 decimal places)
+The company decides to change the nature of the draw, and the first prize winning ticket is no longer returned to the draw.  Work out the probability, for the individuals given, of winning. (Give answers as decimals between 0 and 1, and if required, give answers to 3 decimal places)
 
 {% include question_numerical.html
     id="prob_prob_6"
@@ -130,7 +130,7 @@ The company decides to change the nature of the draw, and the first prize winnin
 
 **Part d**
 
-The number of employees based on the number of complete years they've worked there is shown in the table.  (**Give answers as decimals between 0 and 1**, and if required, give answers to 3 decimal places)
+The number of employees based on the number of complete years they've worked there is shown in the table.  (Give answers as decimals between 0 and 1, and if required, give answers to 3 decimal places)
 
 <table class="table table-bordered">
   <thead>
@@ -246,7 +246,7 @@ Below is an incomplete two-way table showing the preferences of 500 people to tw
 
 **Part b**
 
-(**Give answers as decimals between 0 and 1**, and if required, give answers to 3 decimal places)
+(Give answers as decimals between 0 and 1, and if required, give answers to 3 decimal places)
 
 What is the probability that a randomly selected person:
 
