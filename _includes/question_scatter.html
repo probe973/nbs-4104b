@@ -1,33 +1,48 @@
-<!-- Use your site's existing CSS classes here. 
-     Most GitHub Pages themes use "btn" or "button" for styling. -->
-<div class="quiz-container" style="border: 1px solid #ccc; padding: 20px; margin: 20px 0; border-radius: 8px;">
+{% comment %} 
+  CHANGE THE CLASS BELOW TO MATCH YOUR THEME. 
+  Common choices: "btn", "button", or "custom-button"
+{% endcomment %}
+{% assign button_class = "btn" %}
+
+<div class="quiz-container" style="border: 2px solid #ccc; padding: 25px; margin: 20px 0; border-radius: 10px; background-color: #ffffff; color: #333;">
   <h3 style="margin-top: 0;">{{ include.title }}</h3>
   <p>{{ include.instruction }}</p>
 
-  <!-- TABLE A: The Target Data -->
-  <table style="width: 200px; border-collapse: collapse; margin-bottom: 20px;" border="1">
-    <thead><tr style="background: #f4f4f4;"><th>Point</th><th>X</th><th>Y</th></tr></thead>
+  <!-- TABLE 1: THE TARGET DATA (The "Question") -->
+  <table style="width: 220px; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #999;">
+    <thead><tr style="background: #f4f4f4;"><th>Point</th><th>X Value</th><th>Y Value</th></tr></thead>
     <tbody id="task-{{ include.id }}" style="text-align: center;"></tbody>
   </table>
 
-  <div style="display: flex; flex-wrap: wrap; gap: 20px;">
-    <!-- THE GRID -->
-    <div>
-      <div id="grid-{{ include.id }}" class="jxgbox" style="width:350px; height:350px; border: 1px solid #999;"></div>
-      <p><small>Click empty space to add. Drag a point to move it.</small></p>
+  <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+    
+    <!-- THE GRID (For Mouse Users) -->
+    <div style="flex: 1; min-width: 320px;">
+      <div id="grid-{{ include.id }}" class="jxgbox" style="width:350px; height:350px; border: 1px solid #999;" role="application" aria-label="Coordinate grid"></div>
+      <p><small>Mouse users: Click empty space to add a point. Drag points to move.</small></p>
     </div>
 
-    <!-- TABLE B: The Student's Work -->
-    <div style="flex: 1; min-width: 250px;">
+    <!-- ACCESSIBILITY SECTION (For Keyboard/Blind Users) -->
+    <div style="flex: 1; min-width: 300px;">
+      <div style="padding: 15px; background: #eef7ff; border: 1px solid #0056b3; border-radius: 8px; margin-bottom: 15px;">
+        <p style="margin-top:0;"><strong>Keyboard Entry:</strong></p>
+        <label for="manX-{{ include.id }}">X:</label>
+        <input type="number" id="manX-{{ include.id }}" style="width:50px;" min="0" max="10">
+        <label for="manY-{{ include.id }}" style="margin-left:10px;">Y:</label>
+        <input type="number" id="manY-{{ include.id }}" style="width:50px;" min="0" max="10">
+        <button id="addBtn-{{ include.id }}" class="{{ button_class }}" style="margin-left:10px;">Add Point</button>
+      </div>
+
       <strong>Your Current Plots:</strong>
-      <table style="width: 100%; border-collapse: collapse; margin-top: 10px;" border="1">
-        <thead><tr style="background: #f4f4f4;"><th>Point</th><th>X</th><th>Y</th><th>Action</th></tr></thead>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 5px; border: 1px solid #999;">
+        <thead><tr style="background: #f4f4f4;"><th>Label</th><th>X</th><th>Y</th><th>Remove</th></tr></thead>
         <tbody id="user-{{ include.id }}" style="text-align: center;"></tbody>
       </table>
+
+      <!-- THE CHECK ANSWER BUTTON -->
+      <button id="check-{{ include.id }}" class="{{ button_class }}" style="margin-top: 25px; width: 100%; padding: 10px;">Check My Answers</button>
       
-      <!-- 'btn' is the standard class for GitHub Pages themes like Cayman, Slate, or Minimal -->
-      <button id="check-{{ include.id }}" class="btn" style="margin-top: 20px; width: 100%;">Check Answers</button>
-      <p id="msg-{{ include.id }}" aria-live="polite" style="margin-top: 10px; font-weight: bold;"></p>
+      <p id="msg-{{ include.id }}" aria-live="polite" style="margin-top: 15px; font-weight: bold;"></p>
     </div>
   </div>
 </div>
@@ -36,93 +51,75 @@
 (function() {
   const id = "{{ include.id }}";
   const targets = "{{ include.points }}".split('|').map(p => p.split(',').map(n => parseFloat(n.trim())));
+  const board = JXG.JSXGraph.initBoard('grid-'+id, {boundingbox: [-1, 11, 11, -1], axis: true, showCopyright: false, pan: {enabled: false}, zoom: {enabled: false}});
   
-  const board = JXG.JSXGraph.initBoard('grid-'+id, {
-    boundingbox: [-1, 11, 11, -1], 
-    axis: true, 
-    showCopyright: false,
-    pan: {enabled: false}, 
-    zoom: {enabled: false}
-  });
-
-  // 1. Fill the Source Table
+  // Fill the Question Table
   const taskBody = document.getElementById('task-'+id);
   targets.forEach((p, i) => {
-    taskBody.innerHTML += `<tr><td>${i+1}</td><td>${p[0]}</td><td>${p[1]}</td></tr>`;
+    taskBody.innerHTML += `<tr><td style="border:1px solid #999;">${i+1}</td><td style="border:1px solid #999;">${p[0]}</td><td style="border:1px solid #999;">${p[1]}</td></tr>`;
   });
 
   let userPoints = [];
   const userTable = document.getElementById('user-'+id);
 
-  // 2. Refresh the student's table and update point labels
   function refresh() {
     userTable.innerHTML = "";
     userPoints.forEach((p, i) => {
-      p.setAttribute({name: (i+1).toString()}); // Keep labels 1, 2, 3...
-      userTable.innerHTML += `<tr><td>${i+1}</td><td>${p.X()}</td><td>${p.Y()}</td>
-        <td><button onclick="window.removePt${id}(${i})" style="font-size: 0.8em;">Remove</button></td></tr>`;
+      p.setAttribute({name: (i+1).toString()});
+      userTable.innerHTML += `<tr><td style="border:1px solid #999;">${i+1}</td><td style="border:1px solid #999;">${p.X()}</td><td style="border:1px solid #999;">${p.Y()}</td><td style="border:1px solid #999;"><button onclick="window.delPt${id}(${i})">X</button></td></tr>`;
     });
   }
 
-  // 3. Smart Interaction: Add or Move
+  function addPt(x, y) {
+    if (userPoints.length >= targets.length) {
+      document.getElementById('msg-'+id).innerText = "You have already placed " + targets.length + " points. Move them or remove one to add a new one.";
+      return;
+    }
+    const p = board.create('point', [x, y], {name: (userPoints.length + 1).toString(), snapToGrid: true, snapSizeX: 1, snapSizeY: 1});
+    p.on('drag', refresh);
+    userPoints.push(p);
+    refresh();
+  }
+
+  // Mouse: Add only if clicking empty space
   board.on('down', function(e) {
     const coords = board.getUsrCoordsOfMouse(e);
-    
-    // Check if we clicked on an existing point
-    const objectUnderMouse = board.getAllObjectsUnderMouse(e);
-    const pointClicked = objectUnderMouse.find(obj => obj.elType === 'point');
-
-    // If we clicked empty space AND we still need more points
-    if (!pointClicked) {
-      if (userPoints.length < targets.length) {
-        const p = board.create('point', [Math.round(coords[0]), Math.round(coords[1])], {
-          name: (userPoints.length + 1).toString(), 
-          snapToGrid: true, snapSizeX: 1, snapSizeY: 1
-        });
-        p.on('drag', refresh);
-        userPoints.push(p);
-        refresh();
-      } else {
-        // Just a polite alert if they try to add a 5th point to a 4-point question
-        document.getElementById('msg-'+id).innerText = "All " + targets.length + " points are already on the grid. Drag them to move.";
-      }
+    const objUnderMouse = board.getAllObjectsUnderMouse(e);
+    const isPoint = objUnderMouse.find(obj => obj.elType === 'point');
+    if (!isPoint) {
+      addPt(Math.round(coords[0]), Math.round(coords[1]));
     }
   });
 
-  // 4. Manual Removal
-  window["removePt" + id] = function(index) {
+  // Keyboard: Add via button
+  document.getElementById('addBtn-'+id).onclick = () => {
+    const x = parseFloat(document.getElementById('manX-'+id).value);
+    const y = parseFloat(document.getElementById('manY-'+id).value);
+    if (!isNaN(x) && !isNaN(y)) addPt(x, y);
+  };
+
+  // Global delete function
+  window["delPt" + id] = (index) => {
     board.removeObject(userPoints[index]);
     userPoints.splice(index, 1);
     refresh();
-    document.getElementById('msg-'+id).innerText = "";
   };
 
-  // 5. Check Solution
-  document.getElementById('check-'+id).onclick = function() {
+  // Grading
+  document.getElementById('check-'+id).onclick = () => {
     const msg = document.getElementById('msg-'+id);
     if (userPoints.length < targets.length) {
-      msg.innerText = "Please plot all " + targets.length + " points before checking.";
+      msg.innerText = "Please plot all " + targets.length + " points.";
       return;
     }
-
-    let correctCount = 0;
+    let score = 0;
     let tempTargets = [...targets];
-
     userPoints.forEach(up => {
-      const matchIdx = tempTargets.findIndex(t => t[0] === up.X() && t[1] === up.Y());
-      if (matchIdx > -1) {
-        correctCount++;
-        tempTargets.splice(matchIdx, 1);
-      }
+      const idx = tempTargets.findIndex(tp => tp[0] === up.X() && tp[1] === up.Y());
+      if (idx > -1) { score++; tempTargets.splice(idx, 1); }
     });
-
-    if (correctCount === targets.length) {
-      msg.innerText = "✅ Excellent! All points match the table.";
-      msg.style.color = "green";
-    } else {
-      msg.innerText = "❌ You have " + correctCount + " out of " + targets.length + " points correct.";
-      msg.style.color = "red";
-    }
+    msg.innerText = (score === targets.length) ? "✅ Correct!" : "❌ You have " + score + " out of " + targets.length + " correct.";
+    msg.style.color = (score === targets.length) ? "green" : "red";
   };
 })();
 </script>
