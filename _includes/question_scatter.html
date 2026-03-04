@@ -6,7 +6,6 @@
   <h3 style="margin-top: 0;">{{ include.title }}</h3>
   <p>{{ include.instruction }}</p>
 
-  <!-- TABLE 1: TARGET DATA -->
   <table style="width: 250px; border-collapse: collapse; margin-bottom: 20px; border: 1px solid #999;">
     <thead>
       <tr style="background: #f4f4f4;">
@@ -20,20 +19,18 @@
 
   <div style="display: flex; flex-wrap: wrap; gap: 30px;">
     
-    <!-- THE GRID (Labeled Axes) -->
-    <div style="flex: 1; min-width: 320px;">
+    <div>
       <div id="grid-{{ include.id }}" class="jxgbox" style="width:350px; height:350px; border: 1px solid #999;" role="application" aria-label="Coordinate grid"></div>
       <p><small>Click empty space to add a point. Drag to move.</small></p>
     </div>
 
-    <!-- ACCESSIBILITY SECTION -->
     <div style="flex: 1; min-width: 300px;">
       <div style="padding: 15px; background: #eef7ff; border: 1px solid #0056b3; border-radius: 8px; margin-bottom: 15px;">
         <p style="margin-top:0;"><strong>Add Point:</strong></p>
         <label for="manX-{{ include.id }}">{{ labelX }}:</label>
-        <input type="number" id="manX-{{ include.id }}" style="width:60px;" min="0" max="10">
+        <input type="number" id="manX-{{ include.id }}" style="width:60px;">
         <label for="manY-{{ include.id }}" style="margin-left:10px;">{{ labelY }}:</label>
-        <input type="number" id="manY-{{ include.id }}" style="width:60px;" min="0" max="10">
+        <input type="number" id="manY-{{ include.id }}" style="width:60px;">
         <button id="addBtn-{{ include.id }}" class="{{ button_class }}" style="margin-left:10px;">Add</button>
       </div>
 
@@ -61,11 +58,22 @@
   const id = "{{ include.id }}";
   const targets = "{{ include.points }}".split('|').map(p => p.split(',').map(n => parseFloat(n.trim())));
   
-  // Initialize Board with Custom Axis Labels
+  // --- AUTO-SCALING LOGIC ---
+  let maxX = Math.max(...targets.map(p => p[0]));
+  let maxY = Math.max(...targets.map(p => p[1]));
+  // Round up to nearest nice number and add padding
+  let gridMaxX = Math.ceil(maxX * 1.2) || 10;
+  let gridMaxY = Math.ceil(maxY * 1.2) || 10;
+  // Determine snap size (if range is large, don't snap to 1)
+  let snapSize = gridMaxX > 50 ? 5 : 1;
+
   const board = JXG.JSXGraph.initBoard('grid-'+id, {
-    boundingbox: [-1.5, 11, 11, -1.5], 
+    boundingbox: [-gridMaxX*0.15, gridMaxY*1.15, gridMaxX*1.15, -gridMaxY*0.15], 
     axis: true, 
     showCopyright: false,
+    showNavigation: false, // This removes the symbols below the axis
+    pan: {enabled: false}, 
+    zoom: {enabled: false},
     defaultAxes: {
       x: { name: '{{ labelX }}', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
       y: { name: '{{ labelY }}', withLabel: true, label: { position: 'rt', offset: [-25, -10] } }
@@ -90,7 +98,12 @@
 
   function addPt(x, y) {
     if (userPoints.length >= targets.length) return;
-    const p = board.create('point', [x, y], {name: (userPoints.length + 1).toString(), snapToGrid: true, snapSizeX: 1, snapSizeY: 1});
+    const p = board.create('point', [x, y], {
+        name: (userPoints.length + 1).toString(), 
+        snapToGrid: true, 
+        snapSizeX: snapSize, 
+        snapSizeY: snapSize
+    });
     p.on('drag', refresh);
     userPoints.push(p);
     refresh();
@@ -128,7 +141,7 @@
       const idx = tempTargets.findIndex(tp => tp[0] === up.X() && tp[1] === up.Y());
       if (idx > -1) { score++; tempTargets.splice(idx, 1); }
     });
-    msg.innerText = (score === targets.length) ? "✅ Correct!" : "❌ You have " + score + " out of " + targets.length + " points correct.";
+    msg.innerText = (score === targets.length) ? "✅ Correct!" : "❌ You have " + score + " out of " + targets.length + " correct.";
     msg.style.color = (score === targets.length) ? "green" : "red";
   };
 })();
