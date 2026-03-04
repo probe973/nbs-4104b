@@ -1,0 +1,72 @@
+<div class="quiz-block" style="border: 1px solid #ddd; padding: 20px; margin: 20px 0; border-radius: 8px;">
+  <p><strong>Question:</strong> {{ include.text }}</p>
+
+  <!-- The Visual Grid (with an ARIA label so screen readers know what it is) -->
+  <div id="box-{{ include.id }}" class="jxgbox" style="width:300px; height:300px;" role="application" aria-label="Interactive coordinate grid"></div>
+
+  <!-- The Accessible Entry (Text boxes for students who don't use a mouse) -->
+  <div style="margin-top: 15px;">
+    <label for="x-{{ include.id }}">X Coordinate:</label>
+    <input type="number" id="x-{{ include.id }}" value="0" style="width: 60px;">
+    
+    <label for="y-{{ include.id }}" style="margin-left: 10px;">Y Coordinate:</label>
+    <input type="number" id="y-{{ include.id }}" value="0" style="width: 60px;">
+  </div>
+
+  <button id="check-{{ include.id }}" style="margin-top: 15px; padding: 5px 15px;">Check Answer</button>
+  
+  <!-- This "aria-live" tag makes sure screen readers announce the result immediately -->
+  <p id="feedback-{{ include.id }}" aria-live="polite" style="margin-top: 10px; font-weight: bold;"></p>
+</div>
+
+<script>
+(function() {
+  // 1. Setup the graph
+  var board = JXG.JSXGraph.initBoard('box-{{ include.id }}', {
+    boundingbox: [-1, 11, 11, -1], // Shows 0 to 10
+    axis: true,
+    showCopyright: false
+  });
+
+  // 2. Create the point that moves
+  var point = board.create('point', [0, 0], {
+    name: 'P',
+    snapToGrid: true,
+    snapSizeX: 1,
+    snapSizeY: 1
+  });
+
+  // Links for the input boxes
+  var inX = document.getElementById('x-{{ include.id }}');
+  var inY = document.getElementById('y-{{ include.id }}');
+  var feedback = document.getElementById('feedback-{{ include.id }}');
+
+  // 3. Sync: Moving point updates text boxes
+  point.on('drag', function() {
+    inX.value = point.X();
+    inY.value = point.Y();
+  });
+
+  // 4. Sync: Typing in boxes moves the point
+  function updatePoint() {
+    point.setPosition(JXG.COORDS_BY_USER, [parseFloat(inX.value), parseFloat(inY.value)]);
+    board.update();
+  }
+  inX.addEventListener('input', updatePoint);
+  inY.addEventListener('input', updatePoint);
+
+  // 5. Grading logic
+  document.getElementById('check-{{ include.id }}').onclick = function() {
+    var correctX = {{ include.ansX }};
+    var correctY = {{ include.ansY }};
+
+    if (point.X() === correctX && point.Y() === correctY) {
+      feedback.innerHTML = "✅ Correct!";
+      feedback.style.color = "green";
+    } else {
+      feedback.innerHTML = "❌ Try again. You are at (" + point.X() + ", " + point.Y() + ")";
+      feedback.style.color = "red";
+    }
+  };
+})();
+</script>
