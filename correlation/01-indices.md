@@ -14,7 +14,7 @@ This workshop is **spreadsheet** based and can be accessed by downloading the **
 Use <a href="{{ "/assets/xls/Indices and Trend.xlsx" | relative_url }}">this link </a> to download the file.
 
 <div style="text-align: center; margin-top: 3em;">
-    <a href="{{ "/correlation/" | relative_url }}">← Return to Descriptive Statistics Menu</a>
+    <a href="{{ "/correlation/" | relative_url }}">← Return to Correlation Menu</a>
 </div>
 
 {% include pagination.html %}
