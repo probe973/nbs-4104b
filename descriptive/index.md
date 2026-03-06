@@ -66,13 +66,5 @@ Here you will find links to questions on descriptive statistics topics.
         </div>
     </a>
 
-    <a href="{{ "/descriptive/07-indices.html" | relative_url }}" class="card">
-        <div class="card-content">
-            <div class="card-text">
-                <h3>Index Numbers</h3>
-                <p>Using index numbers and looking at trend.</p>
-            </div>
-        </div>
-    </a>
 
 </div>
