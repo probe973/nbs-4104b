@@ -63,7 +63,7 @@ When creating the scatter diagrams, click on the grid to place each point in tur
    id="scatter_q2a" 
    title="Question 2 a"
    instruction="Plot the relationship between temperature and heating energy."
-   varX="Temperature (C)"
+   varX="Temp (C)"
    varY="Heating (KWh)"
    points="2,20 | 3,18 | 5,14 | 8,10 | 9,12 | 12,9 | 14,4 | 18,2 " %}
 
