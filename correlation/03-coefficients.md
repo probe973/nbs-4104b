@@ -27,9 +27,11 @@ The closer the $r$ value is to $+1$, for positive, or $-1$ for negative, the str
 
 </div>
 
+### Questions
+
 {% include scatter_display.html 
    id="pearsonSDq1" 
-   title="pearsonq1"
+   title="q1"
    alt="The scatter diagram shows a strong positive correlation. As x increase from 2 to 9, y increase from 2 to 20."
    varX="x"
    varY="y"
@@ -47,7 +49,7 @@ The closer the $r$ value is to $+1$, for positive, or $-1$ for negative, the str
 
 {% include scatter_display.html 
    id="pearsonSDq2" 
-   title="pearsonq2"
+   title="q2"
    alt="The scatter diagram shows a moderate strong negative correlation. As x increase from 5 to 24, y decreases from 20 to 1."
    varX="x"
    varY="y"
@@ -61,4 +63,116 @@ The closer the $r$ value is to $+1$, for positive, or $-1$ for negative, the str
     options="a::-0.97||b::-0.73||c::-0.15||d::0.73||e::0.97"
     correct_answer="b"
     solution_text="This is strong negative correlation"
+%}
+
+<div class="explanation" markdown="1">
+
+## Calculation
+
+Pearson's correlation coefficient can be calculated between variables $x$, with mean $\bar{x}$ and $y$, with mean $\bar{y}$ using the formula:
+
+$$r = \frac{\sum{(x-\bar{x})(y-\bar{y})}}{\sqrt{\sum{(x-\bar{x})^2} \sum{(y-\bar{y})^2}}}$$
+
+</div>
+
+{% capture r_table %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+       <th>Point</th>
+      <th>$x$</th>
+      <th>$y$</th>
+      <th>$x-\bar{x}$</th>
+      <th>$y-\bar{y}$</th>
+      <th>$(x-\bar{x})^2$</th>
+      <th>$(y-\bar{y})^2$</th>
+      <th>$(x-\bar{x})(y-\bar{y})$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       <td>A</td>
+      <td>1</td>
+      <td>9</td>
+      <td>-3</td>
+       <td>-12</td>
+      <td>9</td>
+      <td>144</td>
+       <td>36</td>
+    </tr>
+    <tr>
+       <td>B</td>
+      <td>3</td>
+      <td>10</td>
+      <td>-1</td>
+       <td>-11</td>
+       <td>1</td>
+       <td>121</td>
+       <td>11</td>
+    </tr>
+    <tr>
+       <td>C</td>
+      <td>4</td>
+      <td>32</td>
+      <td><input type="number" step="any" aria-label="x minus x bar"></td>
+       <td><input type="number" step="any" aria-label="y minus y bar"></td>
+       <td><input type="number" step="any" aria-label="x minus x bar squared"></td>
+       <td><input type="number" step="any" aria-label="y minus y bar squared"></td>
+       <td><input type="number" step="any" aria-label="x minus x bar times y minus y bar"></td>
+    </tr>
+    <tr>
+       <td>D</td>
+      <td>5</td>
+      <td>16</td>
+      <td><input type="number" step="any" aria-label="x minus x bar"></td>
+       <td><input type="number" step="any" aria-label="y minus y bar"></td>
+       <td><input type="number" step="any" aria-label="x minus x bar squared"></td>
+       <td><input type="number" step="any" aria-label="y minus y bar squared"></td>
+       <td><input type="number" step="any" aria-label="x minus x bar times y minus y bar"></td>
+    </tr>
+    <tr>
+       <td>E</td>
+      <td>7</td>
+       <td>38</td>
+      <td><input type="number" step="any" aria-label="x minus x bar"></td>
+       <td><input type="number" step="any" aria-label="y minus y bar"></td>
+       <td><input type="number" step="any" aria-label="x minus x bar squared"></td>
+       <td><input type="number" step="any" aria-label="y minus y bar squared"></td>
+       <td><input type="number" step="any" aria-label="x minus x bar times y minus y bar"></td>
+    </tr>
+     <tr>
+        <td>SUM</td>
+        <td>20</td>
+        <td>105</td>
+        <td>---</td>
+        <td>---</td>
+        <td><input type="number" step="any" aria-label="sum x minus x bar squared"></td>
+       <td><input type="number" step="any" aria-label="sum y minus y bar squared"></td>
+       <td><input type="number" step="any" aria-label="sum x minus x bar times y minus y bar"></td>
+     </tr>
+  </tbody>
+</table>
+{% endcapture %}
+
+### Questions
+
+Given $\bar{x}=4$ and $\bar{y}=21$,
+
+{% include table_fill.html 
+   id="pearsonq3" 
+   title="3"
+   question_text="Complete thetable"
+   table_content=r_table
+   answers="0 || 11 || 0 || 121 || 0 || 1 || -5 || 1 || 25 || -5 || 3 || 17 || 9 || 289 || 51 || 20 || 700 || 93"
+   tolerance="0" 
+   solution_text="Subtract the means from the $x$ and $y$ data.  Square both of these columns.  Multiply the $x-\bar{x}$ and $y-\bar{y}$ columns.  Add up the columns."
+%}
+
+{% include question_numerical.html
+    id="pearsonq4"
+    title="4"
+    question_text="Use the column sums and the formula to calculate Pearson's correlation coefficient, to 3 d.p."
+    correct_answer="0.786"
+    tolerance="0.0005"
+    solution_text="$\frac{93}{\sqrt{20 \times 700}}$ "
 %}
