@@ -156,12 +156,22 @@ $$r = \frac{\sum{(x-\bar{x})(y-\bar{y})}}{\sqrt{\sum{(x-\bar{x})^2} \sum{(y-\bar
 
 ### Questions
 
+{% include scatter_display.html 
+   id="pearsonSDq3" 
+   title="q3"
+   alt="The scatter diagram shows a moderate strong positive correlation. As x increase from 1 to 7, y increases from 9 to 38."
+   varX="x"
+   varY="y"
+   points="1,9 | 3,10 | 4,32 | 5,16 | 7,38"
+   showTable="true" %}
+
+
 Given $\bar{x}=4$ and $\bar{y}=21$,
 
 {% include table_fill.html 
    id="pearsonq3" 
    title="3"
-   question_text="Complete thetable"
+   question_text="Complete the table"
    table_content=r_table
    answers="0 || 11 || 0 || 121 || 0 || 1 || -5 || 1 || 25 || -5 || 3 || 17 || 9 || 289 || 51 || 20 || 700 || 93"
    tolerance="0" 
