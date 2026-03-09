@@ -40,7 +40,7 @@ The closer the $r$ value is to $+1$, for positive, or $-1$ for negative, the str
 
 {% include question_multiple_choice.html
     id="Pearson_q1"
-    title="Question 1"
+    title="1"
     question_text="What is the most likely $r$ value for the scatter diagram shown?"
     options="a::-0.94||b::0.06||c::0.41||d::0.94"
     correct_answer="d"
@@ -58,7 +58,7 @@ The closer the $r$ value is to $+1$, for positive, or $-1$ for negative, the str
 
 {% include question_multiple_choice.html
     id="Pearson_q2"
-    title="Question 2"
+    title="2"
     question_text="What is the most likely $r$ value for the scatter diagram shown?"
     options="a::-0.97||b::-0.73||c::-0.15||d::0.73||e::0.97"
     correct_answer="b"
