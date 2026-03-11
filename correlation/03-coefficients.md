@@ -186,3 +186,165 @@ Given $\bar{x}=4$ and $\bar{y}=21$,
     tolerance="0.0005"
     solution_text="$\frac{93}{\sqrt{20 \times 700}}$ "
 %}
+
+<div class="explanation" markdown="1">
+
+## Spearman Correlation Coefficient
+
+The **Spearman correlation coefficient** is also a measure of correlation that runs between $-1$ and $+1$.  It doesn't look for a linear relationship betwwen the two variables but a **monotonic** one, that is are higher values in one are associated with higher (or lower) values in another, which don't necessarily need to be a linear one.  It uses **ordinal** data or the **rank** value of continuous data.
+
+$$r_s = 1 - \frac{6 \sum d^2}{n(n^2-1)}$$
+
+Where $r_s$ is the correlation coefficient, $d$ is the difference in the ranks of the point in their variables, $n$ is the number of data points.
+
+### Example
+
+Consider the dataset:
+
+| $x$ | $y$ |
+|:---|:---|
+| 2 | 11 |
+| 3 | 10 |
+| 5 | 18 |
+| 6 | 18 |
+| 8 | 17 |
+| 10 | 28 |
+| 12 | 41 |
+| 14 | 60 |
+
+* You would first work out the ranks for each $x$ and $y$, 1 being highest. If ranks are tied, find the average of the ranks.
+* You would then find the difference in the ranks of each $(x,y)$ point, $d$.
+* You would square this difference value and add them all up, multiply this by 6.
+* You would then divide by $n(n^2-1)$, in this case $n=8$
+
+| $x$ | $y$ | rank $x$ | rank $y$ | $d$ | $d^2$ |
+|:---|:---|:---|:---|:---|:---|
+| 2 | 11 | 8 | 7 | 1 | 1 |
+| 3 | 10 | 7 | 8 | 1 | 1 |
+| 5 | 18 | 6 | 4.5 | 1.5 | 2.25 |
+| 6 | 18 | 5 | 4.5 | 0.5 | 0.25 |
+| 8 | 17 | 4 | 6 | 2 | 4 |
+| 10 | 28 | 3 | 3 | 0 | 0 |
+| 12 | 41 | 2 | 2 | 0 | 0 |
+| 14 | 60 | 1 | 1 | 0 | 0 |
+| SUM | | | | | 8.5 |
+
+$$r_s = 1 - \frac{6 \times 8.5}{8(8^2-1)} = 1 - \frac{51}{504} = 0.899$$
+
+</div>
+
+### Questions
+
+{% include scatter_display.html 
+   id="pearsonSDq5" 
+   title="q5"
+   alt="The scatter diagram shows a moderate strong negative monotonic correlation. As x increase from 1 to 8, y decreases from 52 to 16."
+   varX="x"
+   varY="y"
+   points="1,52 | 3,50 | 4,55 | 5,21 | 6,25 | 8, 16 "
+   showTable="true" %}
+
+{% capture rs_table %}
+<table class="table table-bordered">
+  <thead>
+    <tr>
+       <th>Point</th>
+      <th>$x$</th>
+      <th>$y$</th>
+      <th>rank $x$</th>
+      <th>rank $y$</th>
+      <th>$d$</th>
+      <th>$d^2$</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+       <td>A</td>
+      <td>1</td>
+      <td>52</td>
+      <td>6</td>
+       <td>2</td>
+      <td>4</td>
+      <td>16</td>
+    </tr>
+    <tr>
+       <td>B</td>
+       <td>3</td>
+       <td>50</td>
+       <td>5</td>
+       <td><input type="number" step="any" aria-label="point B rank y"></td>
+       <td><input type="number" step="any" aria-label="point B difference"></td>
+       <td><input type="number" step="any" aria-label="point B difference squared"></td>
+    </tr>
+    <tr>
+       <td>C</td>
+       <td>4</td>
+       <td>55</td>
+       <td><input type="number" step="any" aria-label="point C rank x"></td>
+       <td><input type="number" step="any" aria-label="point C rank y"></td>
+       <td><input type="number" step="any" aria-label="point C difference"></td>
+       <td><input type="number" step="any" aria-label="point C difference squared"></td>
+    </tr>
+    <tr>
+       <td>D</td>
+       <td>5</td>
+       <td>21</td>
+       <td><input type="number" step="any" aria-label="point D rank x"></td>
+       <td><input type="number" step="any" aria-label="point D rank y"></td>
+       <td><input type="number" step="any" aria-label="point D difference"></td>
+       <td><input type="number" step="any" aria-label="point D difference squared"></td>
+    </tr>
+    <tr>
+       <td>E</td>
+       <td>6</td>
+       <td>25</td>
+       <td><input type="number" step="any" aria-label="point E rank x"></td>
+       <td><input type="number" step="any" aria-label="point E rank y"></td>
+       <td><input type="number" step="any" aria-label="point E difference"></td>
+       <td><input type="number" step="any" aria-label="point E difference squared"></td>
+    </tr>
+    <tr>
+       <td>F</td>
+       <td>8</td>
+       <td>16</td>
+       <td><input type="number" step="any" aria-label="point F rank x"></td>
+       <td><input type="number" step="any" aria-label="point F rank y"></td>
+       <td><input type="number" step="any" aria-label="point F difference"></td>
+       <td><input type="number" step="any" aria-label="point F difference squared"></td>
+    </tr>
+     <tr>SUM
+     <td>---</td>
+     <td>---</td>
+     <td>---</td>
+     <td>---</td>
+     <td>---</td>
+     <td><input type="number" step="any" aria-label="sum d squared"></td>
+     </tr>
+    </tbody>
+</table>
+{% endcapture %}
+
+{% include table_fill.html 
+   id="pearsonq5a" 
+   title="5a"
+   question_text="Complete the table"
+   table_content=rs_table
+   answers="3 || 2 || 4 || 4 || 1 || 3 || 9 || 3 || 5 || 2 || 4 || 2 || 4 || 2 || 4 || 1 || 6 || 5 || 25 || 62"
+   tolerance="0" 
+   solution_text="Rank each of $x$ and $y$, find the difference in ranks for each point, sum the column and multiply by 6, use the formula with $n=6$ points."
+%}
+
+{% include question_numerical.html
+    id="pearsonq5b"
+    title="5b"
+    question_text="Calculate the Spearman correlation coefficient, correct to 3 decimal places."
+    correct_answer="-0.771"
+    tolerance="0.0005"
+    solution_text="$\frac{6*62}{\sqrt{6 \times 35}}$ "
+%}
+
+<div style="text-align: center; margin-top: 3em;">
+    <a href="{{ "/correlation/" | relative_url }}">← Return to Correlation Menu</a>
+</div>
+
+{% include pagination.html %}
