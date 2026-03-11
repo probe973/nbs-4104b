@@ -312,7 +312,8 @@ $$r_s = 1 - \frac{6 \times 8.5}{8(8^2-1)} = 1 - \frac{51}{504} = 0.899$$
        <td><input type="number" step="any" aria-label="point F difference"></td>
        <td><input type="number" step="any" aria-label="point F difference squared"></td>
     </tr>
-     <tr>SUM
+     <tr>
+      <td>SUM</td>
      <td>---</td>
      <td>---</td>
      <td>---</td>
