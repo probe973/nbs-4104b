@@ -61,16 +61,16 @@ A small company employs 82 people. People working at the company are either in e
     question_text="Find the **lower quartile**."
     correct_answer="60"
     tolerance="0"
-    solution_text="The median of the lower half (48, 60, 60, 60, 63, 72). <br> Average of 60 and 60 is 60."
+    solution_text="Use the formula $\frac{n+1}{4}=\frac{13}{4}=3.25$ <br> Go quarter of the way between 3rd and 4th value <br> 3rd is 60, 4th is 60, so LQ = 60"
 %}
 
 {% include question_numerical.html
     id="ds_q1b_uq"
     title="1b iii"
     question_text="Find the **upper quartile**."
-    correct_answer="90"
+    correct_answer="92.5"
     tolerance="0"
-    solution_text="The median of the upper half (78, 80, 85, 95, 98, 107). <br> Average of 85 and 95 is 90."
+    solution_text="Use the formula $\frac{3(n+1)}{4}=\frac{3 \times 13}{4}=\frac{39}{4}=9.75$ <br> Go 3 quarters of the way between 9th and 10th value <br> 9th is 85, 10th is 95, 3 quarters of distance is 7.5 <br> UQ = 92.5"
 %}
 
 {% include question_numerical.html
