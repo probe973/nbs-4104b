@@ -328,7 +328,7 @@ $$r_s = 1 - \frac{6 \times 8.5}{8(8^2-1)} = 1 - \frac{51}{504} = 0.899$$
 {% include table_fill.html 
    id="pearsonq5a" 
    title="5a"
-   question_text="Complete the table"
+   question_text="Complete the table, use only positive values in the $d$ column for this exercise."
    table_content=rs_table
    answers="3 || 2 || 4 || 4 || 1 || 3 || 9 || 3 || 5 || 2 || 4 || 2 || 4 || 2 || 4 || 1 || 6 || 5 || 25 || 62"
    tolerance="0" 
