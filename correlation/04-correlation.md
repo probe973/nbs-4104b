@@ -148,7 +148,7 @@ $$r = \frac{\sum{(x-\bar{x})(y-\bar{y})}}{\sqrt{\sum{(x-\bar{x})^2} \sum{(y-\bar
     title="1 e"
     question_text="Does your calculation match the estimate from 1 c?"
     options="yes::Yes||no::No"
-    correct_answer="pos"
+    correct_answer="yes"
     solution_text="If done correctly, it should match."
 %}
 
