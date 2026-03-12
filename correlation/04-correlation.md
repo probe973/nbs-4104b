@@ -10,7 +10,7 @@ title: Correlation Workshop
 When creating the scatter diagrams, click on the grid to place each point in turn.  To move an already created point, click and hold on the point and move.  If you are not able to use a mouse then please enter the points in the input table.
 
 {% include question_scatter.html 
-   id="correlation_q1a" 
+   id="cw_q1a" 
    title="Question 1 a"
    instruction="Plot the relationship between the two exam scores for the 6 candidates shown."
    varX="Exam Score 1"
@@ -18,7 +18,7 @@ When creating the scatter diagrams, click on the grid to place each point in tur
    points="3,7 | 5,13 | 4,12 | 7,16 | 2,4 | 6,14 " %}
 
 {% include question_multiple_choice.html
-    id="correlation_q1b"
+    id="cw_q1b"
     title="1 b"
     question_text="What type of correlation is shown between the two exam scores?"
     options="pos::Positive||none::None||neg::Negative"
@@ -27,7 +27,7 @@ When creating the scatter diagrams, click on the grid to place each point in tur
 %}
 
 {% include question_multiple_choice.html
-    id="correlation_q1c"
+    id="cw_q1c"
     title="1 c"
     question_text="3.	The Pearson product moment correlation coefficient is calculated.  Which one of the following options do you think would be its value?"
     options="a::r = 1||b::r = 0.96||c::r = 0.45||d::r = 0.03||e::r=-0.86"
@@ -134,7 +134,7 @@ $$r = \frac{\sum{(x-\bar{x})(y-\bar{y})}}{\sqrt{\sum{(x-\bar{x})^2} \sum{(y-\bar
 
 
 {% include table_fill.html 
-   id="scatter_1d" 
+   id="cw_1d" 
    title="1 d"
    question_text="Complete the table to confirm to Pearson correlation coefficient."
    table_content=scatter_table_1d
@@ -144,7 +144,7 @@ $$r = \frac{\sum{(x-\bar{x})(y-\bar{y})}}{\sqrt{\sum{(x-\bar{x})^2} \sum{(y-\bar
 %}
 
 {% include question_multiple_choice.html
-    id="correlation_q1e"
+    id="cw_q1e"
     title="1 e"
     question_text="Does your calculation match the estimate from 1 c?"
     options="yes::Yes||no::No"
@@ -211,7 +211,7 @@ $$r = \frac{\sum{(x-\bar{x})(y-\bar{y})}}{\sqrt{\sum{(x-\bar{x})^2} \sum{(y-\bar
 {% endcapture %}
 
 {% include table_fill.html 
-   id="scatter_1f" 
+   id="cw_1f" 
    title="1 f"
    question_text="For both exam 1 and exam 2, write down each candidates rank position (with 1 being the best and 6 being the worst).  "
    table_content=scatter_table_1f
@@ -221,7 +221,7 @@ $$r = \frac{\sum{(x-\bar{x})(y-\bar{y})}}{\sqrt{\sum{(x-\bar{x})^2} \sum{(y-\bar
 %}
 
 {% include question_numerical.html
-    id="scatter_1g"
+    id="cw_1g"
     title="1 g"
     question_text="Without any calculations, what is the value of Spearman's rank correlation coefficient?"
     correct_answer="1"
@@ -318,17 +318,17 @@ $$r_s = 1 - \frac{6 \sum d^2}{n(n^2-1)}$$
 Below is shown the number of workers and the time to complete a job, for 7 different jobs.
 
 {% include table_fill.html 
-   id="scatter_2" 
+   id="cw_2" 
    title="2 a"
    question_text="Complete the table.  Put only positive values for the $d$ column."
-   table_content=scatter_table_1f
+   table_content=scatter_table_2
    answers="3 || 6 || 3 || 9 || 2 || 7 || 5 || 25 || 4 || 4 || 0 || 0 || 1 || 5 || 4 || 16 || 6 || 2 || 4 || 16 || 7 || 1 || 6 || 36 || 5 || 3 || 2 || 4 ||"
    tolerance="0" 
    solution_text=""
 %}
 
 {% include question_numerical.html
-    id="scatter_2 b"
+    id="cw_2 b"
     title="2 b"
     question_text="What is the sum of the $d^2$ column?"
     correct_answer="106"
@@ -337,7 +337,7 @@ Below is shown the number of workers and the time to complete a job, for 7 diffe
 %}
 
 {% include question_numerical.html
-    id="scatter_2 c"
+    id="cw_2 c"
     title="2 c"
     question_text="Calculate the value of Spearman's rank correlation coefficient, correct to 3 d.p."
     correct_answer="-0.893"
@@ -346,7 +346,7 @@ Below is shown the number of workers and the time to complete a job, for 7 diffe
 %}
 
 {% include question_multiple_choice.html
-    id="correlation_q2d"
+    id="cw_q2d"
     title="2 d"
     question_text="What type of monotonic correlation is shown between number of workers and completion time?"
     options="pos::Positive||none::None||neg::Negative"
