@@ -67,5 +67,14 @@ They will provide you with the chance to practice questions on areas of mathemat
         </div>
     </a>
 
+    <a href="{{ "/pdf/" | relative_url }}" class="card">
+        <div class="card-content">
+            <div class="card-text">
+                <h3>PDFs of workshops</h3>
+                <p>For printing or viewing</p>
+            </div>
+        </div>
+    </a>
+
 
 </div>
