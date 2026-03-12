@@ -77,9 +77,9 @@ A small company employs 82 people. People working at the company are either in e
     id="ds_q1b_iqr"
     title="1b iv"
     question_text="Find the **inter-quartile range (IQR)**."
-    correct_answer="30"
+    correct_answer="32.5"
     tolerance="0"
-    solution_text="$IQR = UQ - LQ$. <br> $90 - 60 = 30$."
+    solution_text="$IQR = UQ - LQ$. <br> $92.5 - 60 = 30$."
 %}
 
 <!-- 1c -->
