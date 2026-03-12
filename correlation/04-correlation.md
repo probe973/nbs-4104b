@@ -346,7 +346,7 @@ Below is shown the number of workers and the time to complete a job, for 7 diffe
 %}
 
 {% include question_multiple_choice.html
-    id="correlation_q1b"
+    id="correlation_q2d"
     title="2 d"
     question_text="What type of monotonic correlation is shown between number of workers and completion time?"
     options="pos::Positive||none::None||neg::Negative"
