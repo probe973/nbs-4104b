@@ -58,11 +58,11 @@ They will provide you with the chance to practice questions on areas of mathemat
         </div>
     </a>
 
-    <a href="{{ "/inferential/" | relative_url }}" class="card">
+    <a href="{{ "/confidence/" | relative_url }}" class="card">
         <div class="card-content">
             <div class="card-text">
-                <h3>Inferential Statistics</h3>
-                <p>Looking at sampling distributions and the t-test.</p>
+                <h3>Confidence Intervals</h3>
+                <p>Looking at confidence intervals of the population mean.</p>
             </div>
         </div>
     </a>
