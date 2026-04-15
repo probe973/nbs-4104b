@@ -29,7 +29,7 @@ When creating the scatter diagrams, click on the grid to place each point in tur
 {% include question_multiple_choice.html
     id="cw_q1c"
     title="1 c"
-    question_text="3.	The Pearson product moment correlation coefficient is calculated.  Which one of the following options do you think would be its value?"
+    question_text="The Pearson product moment correlation coefficient is calculated.  Which one of the following options do you think would be its value?"
     options="a::r = 1||b::r = 0.96||c::r = 0.45||d::r = 0.03||e::r=-0.86"
     correct_answer="b"
     solution_text="There is very strong linear relationship between the two variables, which is positive.  It is not quite a perfect straight-line relationship, so r = 1 is ruled out."
