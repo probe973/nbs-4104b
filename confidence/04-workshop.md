@@ -221,7 +221,7 @@ $43 \pm 2.365 \times 1.63
 
 {% include question_confidence_interval.html
     id="cip6"
-    title="1 b iii"
+    title="2 a"
     question_text="Calculate the 95% confidence interval for the mean call time, correct to 2 d.p."
     lower_answer="39.15"
     upper_answer="46.85"
@@ -232,7 +232,7 @@ $43 \pm 2.365 \times 1.63
 
 {% include question_dropdown.html
     id="cip7"
-    title="1 c"
+    title="2 b"
     question_text="Determine if there is evidence that the 40 seconds claim is incorrect."
     solution_text="As 40 seconds is within the 95% confidence interval, there isn’t enough evidence of a difference in time from 40 seconds."
 %}
