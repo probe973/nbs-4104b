@@ -76,23 +76,17 @@ From a sample of size 20, a sample mean of 156 and a sample standard deviation o
 
 From a sample of size 12, a sample mean of 100 and a sample standard deviation of 15 is found.
 
-{% include question_numerical.html
-    id="ciT2a"
-    title="2 a"
-    question_text="What is the lower bound of the 90% confidence interval for the mean, correct to 2 d.p.?"
-    correct_answer="92.22"
+{% include question_confidence_interval.html
+    id="ciqT2"
+    title="2"
+    question_text="Calculate the 90% confidence interval for the mean, correct to 2 d.p."
+    lower_answer="92.22"
+    upper_answer="107.78"
     tolerance="0.005"
-    solution_text="Critical t value is 1.796, so lower bound will be $100 - 1.796 \times \frac{15}{\sqrt{12}}$"
+    solution_text="Critical t value is 1.796, so $100 \pm 1.796 \times \frac{15}{\sqrt{12}}$ <br> (92.22, 107.78)"
+
 %}
 
-{% include question_numerical.html
-    id="ciT2b"
-    title="2 b"
-    question_text="What is the upper bound of the 90% confidence interval for the mean, correct to 2 d.p.?"
-    correct_answer="107.78"
-    tolerance="0.005"
-    solution_text="Critical t value is 1.796, so lower bound will be $100 + 1.796 \times \frac{15}{\sqrt{12}}$"
-%}
 
 <div style="text-align: center; margin-top: 3em;">
     <a href="{{ "/confidence/" | relative_url }}">← Return to Confidence Intervals Menu</a>
